@@ -300,6 +300,7 @@ export default function Navbar() {
             </header>
 
             <ScrollToTop />
+            <FullScreenDialog open={openDialog} handleClose={() => setOpenDialog(false)} />
         </>
     );
 }
