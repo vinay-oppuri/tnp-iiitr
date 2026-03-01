@@ -1,0 +1,62 @@
+const address = `Government Engineering College, Raichur, located at Yeramarus.`;
+
+const Contacts = [
+  {
+    id: 1,
+    name: "Dr.  Jahnvi Tiwari (Placement Faculty Incharge)",
+    email: "fic.placement@iiitr.ac.in",
+    phoneNum: "+91 7081044993",
+  },
+  {
+    id: 3,
+    name: "Dheerendra (Placement Officer)",
+    email: "tnp@iiitr.ac.in",
+    phoneNum: "+91 9718053143",
+  },
+  {
+    id: 4,
+    name: "IIIT, Raichur",
+    email: "info@iiitr.ac.in",
+    // phoneNum: "040 - 2301 6002",
+  },
+];
+
+const FooterLinks = [
+  {
+    id: 1,
+    name: "Internship Announcement",
+    link: "https://forms.gle/c8aXW35ay6L34Dro9/",
+  },
+  {
+    id: 2,
+    name: "Internship Brochure",
+    link: "/PLACEMENT_BROCHURE.pdf",
+  },
+  {
+    id: 3,
+    name: "IIITR Website",
+    link: "https://www.iiitr.ac.in/",
+  },
+  {
+    id: 4,
+    name: "Curriculum",
+    link: "https://iiitr.ac.in/curriculum.html",
+  },
+  {
+    id: 5,
+    name: "Faculty Profiles",
+    link: "https://www.iiitr.ac.in/faculty.html",
+  },
+  {
+    id: 6,
+    name: "Student Activities",
+    link: "https://students.iiitr.ac.in/",
+  },
+  {
+    id: 7,
+    name: "Reach Us",
+    link: "https://iiitr.ac.in/reach_us.html",
+  },
+];
+
+export { address, Contacts, FooterLinks };

@@ -1,0 +1,5 @@
+{
+    "rewrites": [
+        {"source": "/portal/:match*","destination": "https://tnp-portal-frontend.vercel.app/portal/:match*"}
+    ]
+}
