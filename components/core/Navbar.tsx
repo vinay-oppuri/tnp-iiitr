@@ -4,7 +4,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import BarItems from "../../data/BarItems";
-import FullScreenDialog from "../FullScreenDialog";
+import FullScreenDialog from "../TeamDialog";
 import { Menu, X, ChevronDown, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,6 +20,19 @@ type NavItem = {
     label: string;
     target: string;
 };
+
+type NavLink = {
+    name: string;
+    link: string;
+    external?: boolean;
+};
+
+const menuLinks: NavLink[] = [
+    { name: "Programs", link: "/programs" },
+    { name: "Syllabus", link: "https://iiitr.ac.in/CS_Syllabus", external: true },
+    { name: "Clubs", link: "/clubs" },
+    { name: "Team", link: "/team" },
+];
 
 const sectionLinks: NavItem[] = [
     { label: "Home", target: "home" },

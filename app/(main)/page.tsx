@@ -4,14 +4,16 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { AboutIIITR, Thoughts } from "../data/Home";
-import ReusableCard from "../components/ReusableBlock";
-import WhyRecruitUs from "../components/WhyRecruitUs";
-import RecruitmentTimeline from "../components/RecruitmentTimeline";
-import Display from "../components/Display";
-import { Companies } from "../data/Companies";
+
+import { AboutIIITR, Thoughts } from "@/data/Home";
 import { ChevronsDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import PlacementStats from "@/components/PlacementStats";
+import ReusableCard from "@/components/ReusableBlock";
+import WhyRecruitUs from "@/components/WhyRecruitUs";
+import RecruitmentTimeline from "@/components/RecruitmentTimeline";
+import Display from "@/components/Display";
+import { Companies } from "@/data/Companies";
 
 export default function HomePage() {
     const [screenSize, setScreenSize] = useState(0);
@@ -60,6 +62,14 @@ export default function HomePage() {
                                 <p className="text-sm font-medium tracking-wide text-slate-300 sm:text-base md:text-lg">
                                     Indian Institute of Information Technology, Raichur
                                 </p>
+                                {/* <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row md:justify-start">
+                                    <Button className="w-full bg-white text-slate-900 hover:bg-slate-200 sm:w-auto" size="lg">
+                                        Download Brochure
+                                    </Button>
+                                    <Button variant="outline" className="w-full border-slate-400 bg-transparent text-white hover:bg-white/10 hover:text-white sm:w-auto" size="lg">
+                                        Student Portal
+                                    </Button>
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -74,6 +84,10 @@ export default function HomePage() {
                         <ChevronsDown className="h-10 w-10 sm:h-12 sm:w-12" />
                     </Button>
                 </div>
+            </section>
+
+            <section className="relative z-20 mx-auto -mt-20 w-full max-w-6xl px-4 sm:-mt-24 sm:px-6 lg:px-8">
+                <PlacementStats />
             </section>
 
             <section className="section-shell relative z-10 py-16 sm:py-20" id="scrollTO">

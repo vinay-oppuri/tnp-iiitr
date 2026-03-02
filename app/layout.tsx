@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const poppins = Poppins({
@@ -16,7 +14,7 @@ export const metadata: Metadata = {
     description: "Official Training and Placement Cell of Indian Institute of Information Technology Raichur.",
 };
 
-export default function RootLayout({
+export default function Layout({
     children,
 }: {
     children: React.ReactNode;
@@ -24,11 +22,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${inter.variable} ${poppins.variable} base antialiased`} id="back-to-top">
-                <Navbar />
-                <main className="mainBody relative min-h-screen">
-                    {children}
-                </main>
-                <Footer />
+                {children}
             </body>
         </html>
     );

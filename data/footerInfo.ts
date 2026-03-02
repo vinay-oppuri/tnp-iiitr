@@ -28,6 +28,11 @@ const FooterLinks = [
     link: "https://forms.gle/c8aXW35ay6L34Dro9/",
   },
   {
+    id: 8,
+    name: "Team Members",
+    link: "/team",
+  },
+  {
     id: 2,
     name: "Internship Brochure",
     link: "/PLACEMENT_BROCHURE.pdf",

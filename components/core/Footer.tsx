@@ -1,5 +1,5 @@
 import React from "react";
-import { address, Contacts, FooterLinks } from "../data/footerInfo";
+import { address, Contacts, FooterLinks } from "../../data/footerInfo";
 
 type FooterContact = {
     id: number;
