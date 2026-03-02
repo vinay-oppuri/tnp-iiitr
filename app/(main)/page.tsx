@@ -8,12 +8,15 @@ import "aos/dist/aos.css";
 import { AboutIIITR, Thoughts } from "@/data/Home";
 import { ChevronsDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
 import PlacementStats from "@/components/PlacementStats";
-import ReusableCard from "@/components/ReusableBlock";
+import ReusableCard from "@/components/Message";
 import WhyRecruitUs from "@/components/WhyRecruitUs";
 import RecruitmentTimeline from "@/components/RecruitmentTimeline";
 import Display from "@/components/Display";
+import WhatWeOfferDisplay from "@/components/WhatWeOfferDisplay";
 import { Companies } from "@/data/Companies";
+import BarItems from "@/data/BarItems";
 
 export default function HomePage() {
     const [screenSize, setScreenSize] = useState(0);
@@ -62,14 +65,27 @@ export default function HomePage() {
                                 <p className="text-sm font-medium tracking-wide text-slate-300 sm:text-base md:text-lg">
                                     Indian Institute of Information Technology, Raichur
                                 </p>
-                                {/* <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row md:justify-start">
-                                    <Button className="w-full bg-white text-slate-900 hover:bg-slate-200 sm:w-auto" size="lg">
-                                        Download Brochure
-                                    </Button>
-                                    <Button variant="outline" className="w-full border-slate-400 bg-transparent text-white hover:bg-white/10 hover:text-white sm:w-auto" size="lg">
-                                        Student Portal
-                                    </Button>
-                                </div> */}
+                                {(() => {
+                                    const studentMenu = BarItems.find((item) => item.id === 6)?.drop ?? [];
+                                    return (
+                                        <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row md:justify-start">
+                                            {studentMenu.map((item, index) => (
+                                                <Button
+                                                    key={item.id}
+                                                    variant={index === 0 ? "default" : "outline"}
+                                                    onClick={item.onClick}
+                                                    className={index === 0
+                                                        ? "w-full bg-white text-slate-900 hover:bg-slate-200 sm:w-auto"
+                                                        : "w-full border-slate-400 bg-transparent text-white hover:bg-white/10 hover:text-white sm:w-auto"
+                                                    }
+                                                    size="lg"
+                                                >
+                                                    {item.heading}
+                                                </Button>
+                                            ))}
+                                        </div>
+                                    );
+                                })()}
                             </div>
                         </div>
                     </div>
@@ -90,11 +106,18 @@ export default function HomePage() {
                 <PlacementStats />
             </section>
 
-            <section className="section-shell relative z-10 py-16 sm:py-20" id="scrollTO">
+            <section className="flex flex-col gap-8 section-shell relative z-10 py-16 sm:py-20" id="scrollTO">
                 <div id="aboutUs" className="scroll-mt-32" data-aos="fade-up">
                     <h2 className="section-title">About Us</h2>
-                    <div className="mt-6 rounded-3xl border border-slate-200/80 bg-white/85 p-6 shadow-soft backdrop-blur-xl sm:p-8">
+                    <div className="flex gap-8 mt-6 rounded-3xl border border-slate-200/80 bg-white/85 p-6 shadow-soft backdrop-blur-xl sm:p-8">
                         <p className="text-base leading-relaxed text-slate-700 sm:text-lg">{AboutIIITR}</p>
+                        <Image
+                            src="/images/about.png"
+                            alt="About IIITR"
+                            width={500}
+                            height={500}
+                            className="mt-6 rounded-3xl border border-slate-200/80 bg-white/85 p-6 shadow-soft backdrop-blur-xl sm:p-8"
+                        />
                     </div>
                 </div>
 
@@ -112,6 +135,8 @@ export default function HomePage() {
                         />
                     ))}
                 </div>
+
+                <WhatWeOfferDisplay />
             </section>
 
             <section className="section-shell relative z-10 py-6 sm:py-8">

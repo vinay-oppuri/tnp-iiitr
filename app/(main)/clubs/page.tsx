@@ -1,4 +1,4 @@
-import ReusableCard from "@/components/ReusableBlock";
+import ReusableCard from "@/components/Message";
 import clubs from "@/data/Clubs";
 
 

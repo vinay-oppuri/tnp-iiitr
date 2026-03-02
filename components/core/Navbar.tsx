@@ -4,7 +4,6 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import BarItems from "../../data/BarItems";
-import FullScreenDialog from "../TeamDialog";
 import { Menu, X, ChevronDown, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -37,6 +36,7 @@ const menuLinks: NavLink[] = [
 const sectionLinks: NavItem[] = [
     { label: "Home", target: "home" },
     { label: "About Us", target: "aboutUs" },
+    { label: "What We Offer", target: "whatWeOffer" },
     { label: "Why Recruit Us", target: "recruit" },
     { label: "Recruitment Process", target: "rProcess" },
 ];
@@ -57,17 +57,10 @@ export default function Navbar() {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const [openDialog, setOpenDialog] = useState(false);
     const [mobileCompaniesOpen, setMobileCompaniesOpen] = useState(false);
-    const [mobileStudentsOpen, setMobileStudentsOpen] = useState(false);
 
     const companyMenu = useMemo(() => {
         const list = BarItems.find((item) => item.id === 5)?.drop ?? [];
-        return list as MenuLink[];
-    }, []);
-
-    const studentMenu = useMemo(() => {
-        const list = BarItems.find((item) => item.id === 6)?.drop ?? [];
         return list as MenuLink[];
     }, []);
 
@@ -81,7 +74,6 @@ export default function Navbar() {
     useEffect(() => {
         setIsOpen(false);
         setMobileCompaniesOpen(false);
-        setMobileStudentsOpen(false);
     }, [pathname]);
 
     function jumpToSection(target: string) {
@@ -95,7 +87,6 @@ export default function Navbar() {
     function closeMobileMenu() {
         setIsOpen(false);
         setMobileCompaniesOpen(false);
-        setMobileStudentsOpen(false);
     }
 
     const isHome = pathname === "/";
@@ -180,32 +171,11 @@ export default function Navbar() {
                             </DropdownMenuContent>
                         </DropdownMenu>
 
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                                <Button
-                                    variant="ghost"
-                                    className={cn(
-                                        "text-sm font-medium transition",
-                                        isTransparent
-                                            ? "text-slate-300 hover:text-white hover:bg-white/10"
-                                            : "text-slate-300 hover:text-white hover:bg-slate-800"
-                                    )}
-                                >
-                                    For Students <ChevronDown className="ml-1 h-4 w-4" />
-                                </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent className="w-56" align="end">
-                                {studentMenu.map((item) => (
-                                    <DropdownMenuItem key={item.id} onClick={item.onClick} className="cursor-pointer">
-                                        {item.heading}
-                                    </DropdownMenuItem>
-                                ))}
-                            </DropdownMenuContent>
-                        </DropdownMenu>
+
 
                         <Button
                             variant="outline"
-                            onClick={() => setOpenDialog(true)}
+                            onClick={() => router.push("/team")}
                             className={cn(
                                 "ml-2 transition bg-transparent",
                                 isTransparent
@@ -218,6 +188,8 @@ export default function Navbar() {
                     </div>
                 </nav>
 
+
+                {/* MOBILE MENU */}
                 <div
                     id="mobile-menu"
                     className={cn(
@@ -269,41 +241,12 @@ export default function Navbar() {
                             )}
                         </li>
 
-                        <li>
-                            <Button
-                                variant="ghost"
-                                className="w-full justify-between text-slate-300 hover:text-white hover:bg-slate-800"
-                                onClick={() => setMobileStudentsOpen((prev) => !prev)}
-                            >
-                                For Students
-                                <ChevronDown className={cn("h-4 w-4 transition-transform", mobileStudentsOpen && "rotate-180")} />
-                            </Button>
-                            {mobileStudentsOpen && (
-                                <div className="mt-1 space-y-1 pl-4 border-l border-slate-800 ml-4">
-                                    {studentMenu.map((item) => (
-                                        <Button
-                                            key={item.id}
-                                            variant="ghost"
-                                            className="w-full justify-start text-sm text-slate-400 hover:text-white hover:bg-slate-800"
-                                            onClick={() => {
-                                                item.onClick();
-                                                closeMobileMenu();
-                                            }}
-                                        >
-                                            {item.heading}
-                                        </Button>
-                                    ))}
-                                </div>
-                            )}
-                        </li>
+
 
                         <li>
                             <Button
                                 className="w-full mt-2 bg-indigo-600 text-white hover:bg-indigo-700"
-                                onClick={() => {
-                                    setOpenDialog(true);
-                                    closeMobileMenu();
-                                }}
+                                onClick={() => router.push("/team")}
                             >
                                 Team Members
                             </Button>
@@ -313,7 +256,6 @@ export default function Navbar() {
             </header>
 
             <ScrollToTop />
-            <FullScreenDialog open={openDialog} handleClose={() => setOpenDialog(false)} />
         </>
     );
 }

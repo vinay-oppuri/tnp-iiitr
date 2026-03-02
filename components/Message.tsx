@@ -1,4 +1,5 @@
-import React from "react";
+
+import Image from "next/image";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 type ReusableCardProps = {
@@ -28,10 +29,12 @@ export default function ReusableCard({
             {/* Minimal Logo/Image Column */}
             {haveLogo && (
                 <div className="flex w-full shrink-0 items-start justify-center lg:w-1/3">
-                    <div className="relative aspect-square w-full max-w-[240px] overflow-hidden rounded-2xl bg-slate-50 ring-1 ring-slate-100">
-                        <img
+                    <div className="relative aspect-square w-full max-w-[340px] overflow-hidden rounded-2xl bg-slate-50 ring-1 ring-slate-100">
+                        <Image
                             className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                            src={imgSrc}
+                            src={imgSrc || ""}
+                            width={240}
+                            height={240}
                             alt={altText || writer || "profile"}
                         />
                     </div>
@@ -45,7 +48,7 @@ export default function ReusableCard({
                     <div className={`mt-4 h-1 w-20 rounded bg-indigo-600 ${!isLeftAlign && !haveLogo ? "ml-auto" : ""}`} />
                 </div>
 
-                <ScrollArea className={`w-full rounded-md ${writer ? "h-80 pr-4" : ""}`}>
+                <ScrollArea className={`w-full rounded-md ${writer ? "h-60 pr-4" : ""}`}>
                     <div className="space-y-4 text-base leading-relaxed text-slate-600 sm:text-lg">
                         {paragraphs.map((item, index) => (
                             <p key={index} dangerouslySetInnerHTML={{ __html: item }} />
