@@ -19,7 +19,7 @@ export default function Footer() {
     const links = FooterLinks as FooterLink[];
 
     return (
-        <footer className="border-t border-slate-800 bg-[linear-gradient(145deg,#071935_0%,#0b2145_58%,#122b55_100%)] text-slate-200">
+        <footer className="border-t border-slate-800 bg-slate-900/90 text-slate-200">
             <div className="section-shell py-14">
                 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
                     <div>
@@ -57,7 +57,7 @@ export default function Footer() {
                         <ul className="mt-4 space-y-3 text-sm">
                             {links.map((link) => (
                                 <li key={link.id}>
-                                    <a href={link.link} className="text-slate-300 transition hover:text-cyan-300">
+                                    <a href={link.link} className="text-slate-300 transition hover:text-cyan-300 hover:underline">
                                         {link.name}
                                     </a>
                                 </li>

@@ -28,13 +28,12 @@ export default function ReusableCard({
 
             {/* Minimal Logo/Image Column */}
             {haveLogo && (
-                <div className="flex w-full shrink-0 items-start justify-center lg:w-1/3">
-                    <div className="relative aspect-square w-full max-w-[340px] overflow-hidden rounded-2xl bg-slate-50 ring-1 ring-slate-100">
+                <div className="flex w-full shrink-0 lg:w-1/3">
+                    <div className="relative w-full overflow-hidden rounded-2xl bg-slate-50 ring-1 ring-slate-100 lg:h-full lg:min-h-[400px]">
                         <Image
-                            className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                            className="object-cover object-top transition-transform duration-500 hover:scale-105"
                             src={imgSrc || ""}
-                            width={240}
-                            height={240}
+                            fill
                             alt={altText || writer || "profile"}
                         />
                     </div>

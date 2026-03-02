@@ -1,7 +1,5 @@
-// Removed static imports as we use absolute string paths
 
-const AboutIIITR = `The Training and Placement cell of IIIT Raichur started functioning in April 2021. The cell is responsible for facilitating and monitoring the recruitment activities related to internships and placements. It also conducts various training sessions for developing soft skills, problem-solving skills, coding quizzes, etc., to prepare the students for the interviews and coding exams.`
-
+const AboutIIITR = `Established in April 2021, the Training and Placement cell at IIIT Raichur bridges the gap between academia and industry. It facilitates all recruitment activities for internships and full-time placements. To ensure students remain highly competitive, the cell conducts comprehensive training sessions, including soft skills development, problem-solving workshops, and regular coding quizzes. By organizing expert lectures, resume seminars, and mock interviews, it thoroughly prepares graduates for top-tier tech companies and startups.`
 
 const Thoughts = [
 	{

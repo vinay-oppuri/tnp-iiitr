@@ -49,11 +49,11 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-slate-900/70" />
 
                 <div className="section-shell relative z-10 flex min-h-screen flex-col items-center justify-center pt-20 pb-10">
-                    <div className="mx-auto w-full max-w-5xl" data-aos="zoom-in">
+                    <div className="mx-auto w-full max-w-5xl">
                         <div className="flex flex-col items-center justify-center gap-6 text-center md:flex-row md:gap-10 md:text-left">
-                            <img src="/images/logo.svg" alt="IIITR Logo" className="h-[120px] w-[120px] object-contain sm:h-[160px] sm:w-[160px] brightness-0 invert" />
-                            <div className="space-y-3">
-                                <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+                            <Image src="/images/logo.svg" alt="IIITR Logo" data-aos="zoom-in" width={200} height={200} className="h-[120px] w-[120px] object-contain sm:h-[200px] sm:w-[200px] brightness-0 invert" />
+                            <div className="space-y-3" data-aos="fade-left" data-aos-delay="200">
+                                <h1 className="font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
                                     {screenSize > 960 ? (
                                         <>
                                             Training and <br /> Placement Cell
@@ -102,8 +102,10 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <section className="relative z-20 mx-auto -mt-20 w-full max-w-6xl px-4 sm:-mt-24 sm:px-6 lg:px-8">
-                <PlacementStats />
+            <section className="w-full flex flex-col justify-center items-center mt-20">
+                <div className="w-full max-w-6xl">
+                    <PlacementStats />
+                </div>
             </section>
 
             <section className="flex flex-col gap-8 section-shell relative z-10 py-16 sm:py-20" id="scrollTO">
@@ -111,13 +113,16 @@ export default function HomePage() {
                     <h2 className="section-title">About Us</h2>
                     <div className="flex gap-8 mt-6 rounded-3xl border border-slate-200/80 bg-white/85 p-6 shadow-soft backdrop-blur-xl sm:p-8">
                         <p className="text-base leading-relaxed text-slate-700 sm:text-lg">{AboutIIITR}</p>
-                        <Image
-                            src="/images/about.png"
-                            alt="About IIITR"
-                            width={500}
-                            height={500}
-                            className="mt-6 rounded-3xl border border-slate-200/80 bg-white/85 p-6 shadow-soft backdrop-blur-xl sm:p-8"
-                        />
+                        <div className="relative w-full max-w-[500px] shrink-0 lg:w-1/2">
+                            <div className="aspect-square w-80 overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-100 shadow-soft">
+                                <Image
+                                    src="/images/banner/cover.webp"
+                                    alt="About IIITR"
+                                    fill
+                                    className="object-cover transition-transform duration-700 hover:scale-105"
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
 
