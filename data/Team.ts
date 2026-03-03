@@ -39,6 +39,13 @@ export const studentCoordinators: TeamMember[] = [
         image: "/images/team/placeholder.png",
         email: "student3@iiitr.ac.in",
     },
+    {
+        id: "sc-4",
+        name: "Student Name 4",
+        role: "Student Coordinator",
+        image: "/images/team/placeholder.png",
+        email: "student4@iiitr.ac.in",
+    },
 ];
 
 export const volunteers: TeamMember[] = [
@@ -57,6 +64,12 @@ export const volunteers: TeamMember[] = [
     {
         id: "vol-3",
         name: "Volunteer 3",
+        role: "Volunteer",
+        image: "/images/team/placeholder.png",
+    },
+    {
+        id: "vol-4",
+        name: "Volunteer 4",
         role: "Volunteer",
         image: "/images/team/placeholder.png",
     }

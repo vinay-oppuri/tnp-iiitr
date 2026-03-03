@@ -1,5 +1,5 @@
-import React from "react";
-import { WhyUs } from "../data/Home";
+
+import { WhyUs } from "@/data/Home";
 
 export default function WhyRecruitUs() {
     return (

@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-    title: "Training and Placement Cell, IIIT Raichur",
+    title: "TNP | IIIT Raichur",
     description: "Official Training and Placement Cell of Indian Institute of Information Technology Raichur.",
 };
 

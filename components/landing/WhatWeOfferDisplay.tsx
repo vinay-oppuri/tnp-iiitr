@@ -1,18 +1,30 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import WhatWeOffer from "@/data/WhatWeOffer";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { AcademicsData, ResearchData } from "@/data/WhatWeOffer";
 
 export default function WhatWeOfferDisplay() {
     return (
-        <div id="whatWeOffer" className="scroll-mt-32 mt-16 space-y-24 sm:mt-24">
-            <div className="space-y-16">
-                <div className="space-y-4 text-center">
-                    <h1 className="section-title">Academics</h1>
-                    <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">What We Offer</p>
+        <div id="whatWeOffer" className="scroll-mt-32 mt-16 space-y-16 sm:mt-24">
+            <div className="space-y-4 text-center">
+                <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">Discover</p>
+                <h1 className="section-title">What We Offer</h1>
+            </div>
+
+            <Tabs defaultValue="academics" className="w-full">
+                <div className="flex justify-center mb-12">
+                    <TabsList className="bg-slate-100 py-1">
+                        <TabsTrigger value="academics" className="text-sm px-8 py-2.5 data-[state=active]:bg-slate-900/90 data-[state=active]:text-white data-[state=active]:shadow-sm">
+                            Academics
+                        </TabsTrigger>
+                        <TabsTrigger value="research" className="text-sm px-8 py-2.5 data-[state=active]:bg-slate-900/90 data-[state=active]:text-white data-[state=active]:shadow-sm">
+                            Research
+                        </TabsTrigger>
+                    </TabsList>
                 </div>
 
-                <div className="space-y-24">
-                    {WhatWeOffer.map((item, id) => (
+                <TabsContent value="academics" className="space-y-24 animate-in fade-in-50 duration-500">
+                    {AcademicsData.map((item, id) => (
                         <div key={id} data-aos="fade-up" className="space-y-8">
                             <div className="space-y-4 text-center">
                                 <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">{item.title}</h2>
@@ -43,17 +55,10 @@ export default function WhatWeOfferDisplay() {
                             </div>
                         </div>
                     ))}
-                </div>
-            </div>
+                </TabsContent>
 
-            <div className="space-y-16 pt-10">
-                <div className="space-y-4 text-center">
-                    <h1 className="section-title">Research</h1>
-                    <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">What We Offer</p>
-                </div>
-
-                <div className="space-y-24">
-                    {WhatWeOffer.map((item, id) => (
+                <TabsContent value="research" className="space-y-24 animate-in fade-in-50 duration-500">
+                    {ResearchData.map((item, id) => (
                         <div key={id} data-aos="fade-up" className="space-y-8">
                             <div className="space-y-4 text-center">
                                 <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">{item.title}</h2>
@@ -84,8 +89,8 @@ export default function WhatWeOfferDisplay() {
                             </div>
                         </div>
                     ))}
-                </div>
-            </div>
+                </TabsContent>
+            </Tabs>
         </div>
     );
 }

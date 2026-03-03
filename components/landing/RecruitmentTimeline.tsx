@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import TimelineSteps from "../data/TimelineSteps";
+import TimelineSteps from "../../data/TimelineSteps";
 
 export default function RecruitmentTimeline() {
     return (

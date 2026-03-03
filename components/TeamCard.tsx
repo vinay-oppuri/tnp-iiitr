@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { type TeamMember } from "../data/Team";
 import { Linkedin, Mail } from "lucide-react";
+import { Card, CardContent, CardTitle, CardDescription } from "@/components/ui/card";
 
 type TeamCardProps = {
     member: TeamMember;
@@ -10,8 +11,8 @@ type TeamCardProps = {
 
 export default function TeamCard({ member, delay = 0 }: TeamCardProps) {
     return (
-        <div
-            className="group relative flex flex-col items-center overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-soft transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
+        <Card
+            className="group relative flex flex-col items-center overflow-hidden rounded-3xl transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
             data-aos="fade-up"
             data-aos-delay={delay}
         >
@@ -49,10 +50,10 @@ export default function TeamCard({ member, delay = 0 }: TeamCardProps) {
                 </div>
             </div>
 
-            <div className="w-full space-y-1 bg-white p-6 text-center">
-                <h3 className="font-display text-xl font-bold text-slate-900">{member.name}</h3>
-                <p className="text-sm font-medium text-cyan-600 uppercase tracking-wider">{member.role}</p>
-            </div>
-        </div>
+            <CardContent className="w-full space-y-1 p-6 text-center">
+                <CardTitle className="font-display text-xl font-bold text-slate-900">{member.name}</CardTitle>
+                <CardDescription className="text-sm font-medium text-cyan-600 uppercase tracking-wider">{member.role}</CardDescription>
+            </CardContent>
+        </Card>
     );
 }

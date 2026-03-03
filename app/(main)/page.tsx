@@ -9,12 +9,12 @@ import { AboutIIITR, Thoughts } from "@/data/Home";
 import { ChevronsDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import PlacementStats from "@/components/PlacementStats";
+import PlacementStats from "@/components/landing/PlacementStats";
 import ReusableCard from "@/components/Message";
-import WhyRecruitUs from "@/components/WhyRecruitUs";
-import RecruitmentTimeline from "@/components/RecruitmentTimeline";
+import WhyRecruitUs from "@/components/landing/WhyRecruitUs";
+import RecruitmentTimeline from "@/components/landing/RecruitmentTimeline";
 import Display from "@/components/Display";
-import WhatWeOfferDisplay from "@/components/WhatWeOfferDisplay";
+import WhatWeOfferDisplay from "@/components/landing/WhatWeOfferDisplay";
 import { Companies } from "@/data/Companies";
 import BarItems from "@/data/BarItems";
 
