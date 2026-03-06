@@ -9,19 +9,19 @@ const companies: CompanyItem[] = [
     {
         id: 1,
         name: "Capgemini",
-        image: "https://ui-avatars.com/api/?name=Capgemini&background=0070ad&color=fff&size=128",
+        image: "/images/companies/capgemini.svg",
         url: "https://www.capgemini.com",
     },
     {
         id: 2,
         name: "CKM VIGIL",
-        image: "https://ui-avatars.com/api/?name=CKM+VIGIL&background=random&color=fff&size=128",
+        image: "/images/companies/ckm_vigil.jpg",
         url: "https://ckmvigil.in/",
     },
     {
         id: 3,
         name: "Village Agro",
-        image: "https://ui-avatars.com/api/?name=Village+Agro&background=random&color=fff&size=128",
+        image: "/images/companies/village_agro.png",
         url: "https://www.villageagro.com/",
     },
     {
@@ -39,13 +39,13 @@ const companies: CompanyItem[] = [
     {
         id: 6,
         name: "Amazon",
-        image: "https://ui-avatars.com/api/?name=Amazon&background=ff9900&color=fff&size=128",
+        image: "/images/companies/amazon.svg",
         url: "https://www.amazon.jobs/"
     },
     {
         id: 7,
         name: "C Dot",
-        image: "https://cdot.in/cdotweb/assets/img/cdot_logo.png",
+        image: "/images/companies/cdot.png",
         url: "https://www.cdot.in/"
     },
     {
@@ -63,13 +63,13 @@ const companies: CompanyItem[] = [
     {
         id: 10,
         name: "Tata Consultancy Services (TCS)",
-        image: "https://seeklogo.com/images/T/tata-consultancy-services-tcs-logo-DE443D01C0-seeklogo.com.png",
+        image: "/images/companies/tcs.png",
         url: "https://www.tcs.com/"
     },
     {
         id: 11,
         name: "MAQ Software",
-        image: "https://ui-avatars.com/api/?name=MAQ+Software&background=2563eb&color=fff&size=128",
+        image: "/images/companies/maq_software.webp",
         url: "https://maqsoftware.com/"
     },
     {
@@ -93,7 +93,7 @@ const companies: CompanyItem[] = [
     {
         id: 15,
         name: "Zycus",
-        image: "https://ui-avatars.com/api/?name=Zycus&background=10b981&color=fff&size=128",
+        image: "/images/companies/zycus.webp",
         url: "https://www.zycus.com/"
     },
     {
@@ -105,7 +105,7 @@ const companies: CompanyItem[] = [
     {
         id: 17,
         name: "Kiwi",
-        image: "https://img.mensxp.com/media/shop/brand/2020/sep/kiwi-logo-1-1600079928.png",
+        image: "/images/companies/kiwi.png",
         url: "https://gokiwi.in/"
     },
     {
