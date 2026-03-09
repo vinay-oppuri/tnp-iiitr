@@ -40,7 +40,11 @@ export default function WhatWeOfferDisplay() {
                                     <div className="h-px w-full max-w-[100px] bg-slate-200 sm:max-w-[200px]" />
                                 </div>
 
-                                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                                <div className={`grid gap-4 ${item.courses.length === 1 ? "grid-cols-1" :
+                                    item.courses.length === 2 ? "grid-cols-1 sm:grid-cols-2" :
+                                        item.courses.length === 3 ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" :
+                                            "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                                    }`}>
                                     {item.courses.map((course, idx) => (
                                         <Card key={idx} className="group overflow-hidden border-slate-200/60 bg-white/60 transition-all duration-300 hover:-translate-y-1 hover:border-slate-400 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
                                             <CardContent className="flex h-full flex-col items-center justify-center gap-4 p-6 text-center">
@@ -74,7 +78,11 @@ export default function WhatWeOfferDisplay() {
                                     <div className="h-px w-full max-w-[100px] bg-slate-200 sm:max-w-[200px]" />
                                 </div>
 
-                                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                                <div className={`grid gap-4 ${item.courses.slice(0, 8).length === 1 ? "grid-cols-1" :
+                                    item.courses.slice(0, 8).length === 2 ? "grid-cols-1 sm:grid-cols-2" :
+                                        item.courses.slice(0, 8).length === 3 ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" :
+                                            "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                                    }`}>
                                     {item.courses.slice(0, 8).map((course, idx) => (
                                         <Card key={idx} className="group overflow-hidden border-slate-200/60 bg-white/60 transition-all duration-300 hover:-translate-y-1 hover:border-slate-400 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
                                             <CardContent className="flex h-full flex-col items-center justify-center gap-4 p-6 text-center">

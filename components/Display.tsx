@@ -10,7 +10,7 @@ export default function Display({ collection }: DisplayProps) {
     return (
         <div className="mx-auto w-full">
             <h3 className="font-display mb-6 text-center text-2xl font-semibold text-indigo-900 sm:mb-8 sm:text-3xl">
-                Recruiters
+                Past Recruiters
             </h3>
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
                 {collection.map((item) => {

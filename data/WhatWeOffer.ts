@@ -3,7 +3,7 @@ import {
     MonitorSmartphone, Cpu, Braces, Binary, Boxes, Layers,
     Calculator, FunctionSquare, BarChart3, Atom, BookHeart, Bot,
     RadioTower, Car, Eye, Plane, Cloud, MapPin, Server,
-    Activity, Hash, Scale, Share2, Wifi, HardDrive
+    Activity, Hash, Scale, Share2, Wifi, HardDrive, Coins, Lock
 } from "lucide-react";
 
 const Academics = [
@@ -50,6 +50,24 @@ const Academics = [
             { name: "Humanities", icon: BookHeart },
         ],
         facilities: "The Artificial Intelligence and Data Science academic curriculum is designed to bridge the gap between theoretical computer science and real-world problem-solving. It is an intensive program where we are constantly challenged to extract meaningful insights from massive datasets and build systems that learn and adapt."
+    },
+    {
+        id: 3,
+        title: "Mathematics and Computing",
+        courses: [
+            { name: "Calculus", icon: FunctionSquare },
+            { name: "Linear Algebra", icon: Calculator },
+            { name: "Probability and Statistics", icon: BarChart3 },
+            { name: "Numerical Methods", icon: Hash },
+            { name: "Data Structures", icon: Boxes },
+            { name: "Algorithms", icon: Binary },
+            { name: "Machine Learning", icon: Bot },
+            { name: "Cryptography", icon: Lock },
+            { name: "Scientific Computing", icon: Atom },
+            { name: "Financial Mathematics", icon: Coins },
+            { name: "Software Development", icon: Code },
+        ],
+        facilities: "The B.Tech program in Mathematics and Computing is a multidisciplinary course blending mathematics, statistics, and computer science. It equips students with strong analytical skills and computational proficiency, covering core areas like probability, algorithms, and machine learning. The curriculum bridges theoretical foundations and real-world applications in domains such as finance, cryptography, and software development, preparing students for careers in research, analytics, and technology."
     }
 ]
 

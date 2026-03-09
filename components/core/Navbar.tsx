@@ -135,7 +135,7 @@ export default function Navbar() {
                                     "text-sm font-medium transition",
                                     isTransparent
                                         ? "text-slate-300 hover:text-white hover:bg-white/10"
-                                        : "text-slate-300 hover:text-white hover:bg-slate-800"
+                                        : "text-slate-300 hover:text-white hover:bg-white/10"
                                 )}
                                 onClick={() => jumpToSection(item.target)}
                             >
@@ -151,7 +151,7 @@ export default function Navbar() {
                                         "text-sm font-medium transition",
                                         isTransparent
                                             ? "text-slate-300 hover:text-white hover:bg-white/10"
-                                            : "text-slate-300 hover:text-white hover:bg-slate-800"
+                                            : "text-slate-300 hover:text-white hover:bg-white/10"
                                     )}
                                 >
                                     For Companies <ChevronDown className="ml-1 h-4 w-4" />
