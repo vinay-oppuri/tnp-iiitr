@@ -4,7 +4,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import BarItems from "../../data/BarItems";
-import { Menu, X, ChevronDown, ArrowUp } from "lucide-react";
+import { Menu, X, ChevronDown, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
     DropdownMenu,
@@ -46,11 +46,6 @@ type MenuLink = {
     heading: string;
     onClick: () => void;
 };
-
-function isDesktop() {
-    if (typeof window === "undefined") return false;
-    return window.innerWidth >= 768;
-}
 
 export default function Navbar() {
     const router = useRouter();
@@ -174,16 +169,17 @@ export default function Navbar() {
 
 
                         <Button
-                            variant="outline"
+                            variant="ghost"
                             onClick={() => router.push("/team")}
                             className={cn(
-                                "ml-2 transition bg-transparent",
+                                "ml-2 inline-flex h-10 items-center gap-2 rounded-full border px-4 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-cyan-400/70 focus-visible:ring-offset-0 text-white/80 hover:text-white",
                                 isTransparent
-                                    ? "border-white/30 text-white hover:bg-white/10 hover:text-white"
-                                    : "border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white"
+                                    ? "border-white/20 bg-white/5 backdrop-blur-md hover:bg-white/10"
+                                    : "border-slate-700 bg-slate-800/80 hover:bg-slate-800"
                             )}
                         >
-                            Team Members
+                            <Users className="h-4 w-4" />
+                            <span>Team Members</span>
                         </Button>
                     </div>
                 </nav>
@@ -245,10 +241,17 @@ export default function Navbar() {
 
                         <li>
                             <Button
-                                className="w-full mt-2 bg-indigo-600 text-white hover:bg-indigo-700"
-                                onClick={() => router.push("/team")}
+                                variant="ghost"
+                                className="mt-2 flex h-12 w-full items-center justify-start gap-3 rounded-xl border border-slate-700 bg-slate-800/90 px-4 text-white transition-colors hover:bg-slate-800"
+                                onClick={() => {
+                                    router.push("/team");
+                                    closeMobileMenu();
+                                }}
                             >
-                                Team Members
+                                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-700 text-slate-100">
+                                    <Users className="h-4 w-4" />
+                                </span>
+                                <span className="text-sm font-medium">Team Members</span>
                             </Button>
                         </li>
                     </ul>
