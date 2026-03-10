@@ -10,11 +10,25 @@ export type TeamMember = {
 export const facultyIncharge: TeamMember[] = [
     {
         id: "fic-1",
-        name: "Dr. Faculty Name", // Placeholder: User will update
+        name: "Dr. Jahnvi Tiwari",
         role: "Faculty In-Charge (T&P)",
         image: "/images/team/placeholder.png",
-        email: "tnp@iiitr.ac.in",
-    }
+        email: "fic.csc@iiitr.ac.in",
+    },
+    {
+        id: "fic-2",
+        name: "Abhijeet",
+        role: "Consultant - Corporate Relation",
+        image: "/images/team/placeholder.png",
+        email: "csc@iiitr.ac.in",
+    },
+    {
+        id: "fic-3",
+        name: "Mithalee Agarwal",
+        role: "Professor of Practice - Corporate Relation",
+        image: "/images/team/placeholder.png",
+        email: "vijaymita94@gmail.com",
+    },
 ];
 
 export const studentCoordinators: TeamMember[] = [

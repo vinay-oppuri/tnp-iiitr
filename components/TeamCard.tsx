@@ -7,12 +7,13 @@ import { Card, CardContent, CardTitle, CardDescription } from "@/components/ui/c
 type TeamCardProps = {
     member: TeamMember;
     delay?: number;
+    hideEmail?: boolean;
 };
 
-export default function TeamCard({ member, delay = 0 }: TeamCardProps) {
+export default function TeamCard({ member, delay = 0, hideEmail = false }: TeamCardProps) {
     return (
         <Card
-            className="group relative flex flex-col items-center overflow-hidden rounded-3xl transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
+            className="group relative flex h-full w-full flex-1 flex-col items-center overflow-hidden rounded-3xl transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
             data-aos="fade-up"
             data-aos-delay={delay}
         >
@@ -38,7 +39,7 @@ export default function TeamCard({ member, delay = 0 }: TeamCardProps) {
                         </a>
                     ) : null}
 
-                    {member.email ? (
+                    {member.email && !hideEmail ? (
                         <a
                             href={`mailto:${member.email}`}
                             className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-500 text-white transition-transform hover:scale-110"
@@ -50,7 +51,7 @@ export default function TeamCard({ member, delay = 0 }: TeamCardProps) {
                 </div>
             </div>
 
-            <CardContent className="w-full space-y-1 p-6 text-center">
+            <CardContent className="flex w-full flex-grow flex-col justify-center space-y-1 p-6 text-center">
                 <CardTitle className="font-display text-xl font-bold text-slate-900">{member.name}</CardTitle>
                 <CardDescription className="text-sm font-medium text-cyan-600 uppercase tracking-wider">{member.role}</CardDescription>
             </CardContent>
