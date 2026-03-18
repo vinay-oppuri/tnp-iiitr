@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import { type TeamMember } from "../data/Team";
 import { Linkedin, Mail } from "lucide-react";

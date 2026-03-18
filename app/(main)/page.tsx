@@ -6,8 +6,14 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import { AboutIIITR, Thoughts } from "@/data/Home";
-import { ChevronsDown } from "lucide-react";
+import { ChevronDown, ChevronsDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 import PlacementStats from "@/components/landing/PlacementStats";
 import ReusableCard from "@/components/Message";
@@ -66,23 +72,55 @@ export default function HomePage() {
                                     Indian Institute of Information Technology, Raichur
                                 </p>
                                 {(() => {
+                                    const companyMenu = BarItems.find((item) => item.id === 5)?.drop ?? [];
                                     const studentMenu = BarItems.find((item) => item.id === 6)?.drop ?? [];
                                     return (
                                         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row md:justify-start">
-                                            {studentMenu.map((item, index) => (
-                                                <Button
-                                                    key={item.id}
-                                                    variant={index === 0 ? "default" : "outline"}
-                                                    onClick={item.onClick}
-                                                    className={index === 0
-                                                        ? "w-full bg-white text-slate-900 hover:bg-slate-200 sm:w-auto"
-                                                        : "w-full border-slate-400 bg-transparent text-white hover:bg-white/10 hover:text-white sm:w-auto"
-                                                    }
-                                                    size="lg"
-                                                >
-                                                    {item.heading}
-                                                </Button>
-                                            ))}
+                                            <DropdownMenu>
+                                                <DropdownMenuTrigger asChild>
+                                                    <Button
+                                                        variant="default"
+                                                        size="lg"
+                                                        className="w-full bg-white text-slate-900 hover:bg-slate-200 sm:w-auto font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 flex items-center gap-2"
+                                                    >
+                                                        For Companies <ChevronDown className="h-4 w-4" />
+                                                    </Button>
+                                                </DropdownMenuTrigger>
+                                                <DropdownMenuContent align="start" className="w-56 bg-slate-900/95 border-slate-800 text-white backdrop-blur-md">
+                                                    {companyMenu.map((item) => (
+                                                        <DropdownMenuItem
+                                                            key={item.id}
+                                                            onClick={item.onClick}
+                                                            className="hover:bg-white/10 cursor-pointer focus:bg-white/10 focus:text-white"
+                                                        >
+                                                            {item.heading}
+                                                        </DropdownMenuItem>
+                                                    ))}
+                                                </DropdownMenuContent>
+                                            </DropdownMenu>
+
+                                            <DropdownMenu>
+                                                <DropdownMenuTrigger asChild>
+                                                    <Button
+                                                        variant="outline"
+                                                        size="lg"
+                                                        className="w-full border-slate-400 bg-transparent text-white hover:bg-white/10 hover:text-white sm:w-auto flex items-center gap-2"
+                                                    >
+                                                        For Students <ChevronDown className="h-4 w-4" />
+                                                    </Button>
+                                                </DropdownMenuTrigger>
+                                                <DropdownMenuContent align="start" className="w-56 bg-slate-900/95 border-slate-800 text-white backdrop-blur-md">
+                                                    {studentMenu.map((item) => (
+                                                        <DropdownMenuItem
+                                                            key={item.id}
+                                                            onClick={item.onClick}
+                                                            className="hover:bg-white/10 cursor-pointer focus:bg-white/10 focus:text-white"
+                                                        >
+                                                            {item.heading}
+                                                        </DropdownMenuItem>
+                                                    ))}
+                                                </DropdownMenuContent>
+                                            </DropdownMenu>
                                         </div>
                                     );
                                 })()}
@@ -102,11 +140,11 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <section className="w-full flex flex-col justify-center items-center mt-20">
+            {/* <section className="w-full flex flex-col justify-center items-center mt-20">
                 <div className="w-full max-w-6xl">
                     <PlacementStats />
                 </div>
-            </section>
+            </section> */}
 
             <section className="flex flex-col gap-8 section-shell relative z-10 py-16 sm:py-20" id="scrollTO">
                 <div id="aboutUs" className="scroll-mt-32" data-aos="fade-up">
