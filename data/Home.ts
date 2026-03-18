@@ -62,7 +62,7 @@ const Thoughts = [
 			deliver their best towards the golden triangle formed by industry, R&amp;D, and
 			academics. Feel free to reach us for any concerns whatsoever.\n
 			Warm regards and best wishes`,
-		imgSrc: "/images/director.svg",
+		imgSrc: "/images/core-members/director.svg",
 		altText: 'Director',
 	},
 	{
@@ -72,7 +72,7 @@ const Thoughts = [
 		writer: 'Dr. Jahnvi Tiwari',
 		heading: 'Message From FIC',
 		content: `With a vision to become a globally recognized institute for its academic excellence and groundbreaking research and innovation IIIT Raichur started its journey in 2019, under the mentorship of IIT Hyderabad. The curriculum of IIITR Raichur, not only focuses on teaching technical courses, but also on making the students industry ready. The rigour in teaching, endeavor to excel in all facets, learning from top notch researchers and academicians and participating in extra co-curricular activities inculcate definite excellence in the students of IIIT Raichur. It is my pleasure to invite all the prospective employers and trainers from India and abroad to visit the campus for the internship process. I am sure you will witness the outcome of excellence in the teaching and learning environment created at IIIT raichur. I look forward to your wholehearted support and engagement with us.`,
-		imgSrc: "/images/jahnvi.jpg",
+		imgSrc: "/images/core-members/jahnvi.jpg",
 		altText: 'TPO',
 	},
 ]
