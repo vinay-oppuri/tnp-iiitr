@@ -15,7 +15,8 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import PlacementStats from "@/components/landing/PlacementStats";
+import PlacementStatsSummary from "@/components/landing/PlacementStats";
+import PlacementStats from "@/components/PlacementStats";
 import ReusableCard from "@/components/Message";
 import WhyRecruitUs from "@/components/landing/WhyRecruitUs";
 import RecruitmentTimeline from "@/components/landing/RecruitmentTimeline";
@@ -140,11 +141,11 @@ export default function HomePage() {
                 </div>
             </section>
 
-            {/* <section className="w-full flex flex-col justify-center items-center mt-20">
-                <div className="w-full max-w-6xl">
-                    <PlacementStats />
+             <section className="w-full flex flex-col justify-center items-center mt-20">
+                <div className="w-full">
+                    <PlacementStatsSummary />
                 </div>
-            </section> */}
+            </section> 
 
             <section className="flex flex-col gap-8 section-shell relative z-10 py-16 sm:py-20" id="scrollTO">
                 <div id="aboutUs" className="scroll-mt-32" data-aos="fade-up">
@@ -177,6 +178,10 @@ export default function HomePage() {
                             altText={item.altText}
                         />
                     ))}
+                </div>
+
+                <div className="mt-16 w-full flex justify-center">
+                    <PlacementStats />
                 </div>
 
                 <WhatWeOfferDisplay />

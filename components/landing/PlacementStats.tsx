@@ -1,5 +1,3 @@
-import React from "react";
-
 const stats = [
     { label: "Highest Package", value: "45 LPA" },
     { label: "Average Package", value: "15.5 LPA" },
@@ -7,7 +5,7 @@ const stats = [
     { label: "Top Recruiters", value: "50+" },
 ];
 
-export default function PlacementStats() {
+export default function PlacementStatsSummary() {
     return (
         <div className="mx-auto w-full max-w-5xl px-4">
             <div className="grid grid-cols-2 gap-6 rounded-3xl border border-slate-200/80 bg-white/90 p-8 shadow-sm backdrop-blur-xl sm:grid-cols-4 sm:gap-8">
