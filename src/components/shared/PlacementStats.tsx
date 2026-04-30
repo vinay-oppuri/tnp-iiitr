@@ -1,110 +1,176 @@
-"use client"
+"use client";
 
-import { Pie, PieChart } from "recharts"
+import React from "react";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Cell,
+  XAxis,
+  YAxis,
+} from "recharts";
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-  ChartLegend,
-  ChartLegendContent
-} from "@/components/ui/chart"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { tableData, chartData, chartConfig } from "@/data/Placements"
+} from "@/components/ui/chart";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
-export function PlacementStats() {
+const placementData = [
+  { batch: "2019-23", highestPackage: 45, placementRate: 68.80, companiesVisited: 16, fill: "#4285F4" },
+  { batch: "2020-24", highestPackage: 21.5, placementRate: 21.05, companiesVisited: 15, fill: "#F4B400" },
+  { batch: "2021-25", highestPackage: 48, placementRate: 41.03, companiesVisited: 19, fill: "#0F9D58" },
+  { batch: "2022-26*", highestPackage: 45, placementRate: 65.38, companiesVisited: 9, fill: "#A142F4" },
+];
+
+
+
+const chartConfig = {
+  highestPackage: { label: "Highest Package (LPA)" },
+  placementRate: { label: "Placement Rate (%)" },
+  companiesVisited: { label: "Companies Visited" },
+} satisfies ChartConfig;
+
+const PlacementStats: React.FC = () => {
   return (
-    <section className="section-shell py-8 md:py-16">
-      <div className="mb-12 text-center">
-        <h2 className="section-title mb-4">Placement Statistics</h2>
-        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          A glance at our recent placement records and salary distributions, showcasing our commitment to student success.
-        </p>
+    <section className="w-full bg-[#f9f9fc] pb-20">
+      {/* Header */}
+      <div className="text-center mt-20 mb-12 px-4">
+        <h2 className="font-poppins text-4xl font-bold text-[rgba(53,22,107,1)] mb-2">
+          Placement Stats
+        </h2>
       </div>
-      
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-        {/* Left Side: Table */}
-        <div className="h-full">
-          <Card className="glass-panel border-0 shadow-soft h-full transition-all hover:shadow-lg flex flex-col">
-            <CardHeader>
-              <CardTitle className="text-2xl font-display text-slate-800 dark:text-white">Key Metrics</CardTitle>
-              <CardDescription className="text-slate-500">Comparison between last year and overall stats</CardDescription>
-            </CardHeader>
-            <CardContent className="flex-1 flex flex-col justify-center">
-              <div className="rounded-lg border border-slate-200 dark:border-slate-800 overflow-hidden">
-                <Table>
-                  <TableHeader className="bg-slate-50 dark:bg-slate-900">
-                    <TableRow>
-                      <TableHead className="font-semibold text-slate-700 dark:text-slate-300">Metric</TableHead>
-                      <TableHead className="font-semibold text-slate-700 dark:text-slate-300">Last Year Stats</TableHead>
-                      <TableHead className="text-right font-semibold text-slate-700 dark:text-slate-300">Overall Stats</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {tableData.map((row) => (
-                      <TableRow key={row.metric} className="transition-colors hover:bg-slate-50/50 dark:hover:bg-slate-800/50">
-                        <TableCell className="font-medium text-slate-800 dark:text-slate-200 py-4">{row.metric}</TableCell>
-                        <TableCell className="text-slate-600 dark:text-slate-400 py-4">{row.lastYear}</TableCell>
-                        <TableCell className="text-right text-slate-600 dark:text-slate-400 font-semibold py-4">{row.overall}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
 
-        {/* Right Side: Pie Chart */}
-        <div className="h-full">
-          <Card className="glass-panel border-0 shadow-soft h-full transition-all hover:shadow-lg flex flex-col">
-            <CardHeader>
-              <CardTitle className="text-2xl font-display text-slate-800 dark:text-white">Salary Distribution</CardTitle>
-              <CardDescription className="text-slate-500">Breakdown of package ranges (Overall)</CardDescription>
-            </CardHeader>
-            <CardContent className="flex-1 flex items-center justify-center pb-0">
-              <div className="w-full max-w-[400px] h-[350px]">
-                <ChartContainer
-                  config={chartConfig}
-                  className="w-full h-[300px] aspect-square mx-auto pb-4"
-                >
-                  <PieChart>
-                    <ChartTooltip
-                      cursor={false}
-                      content={<ChartTooltipContent hideLabel />}
-                    />
-                    <Pie
-                      data={chartData}
-                      dataKey="value"
-                      nameKey="range"
-                      innerRadius={70}
-                      outerRadius={100}
-                      strokeWidth={5}
-                      stroke="var(--card)"
-                      paddingAngle={5}
-                      cornerRadius={5}
-                    />
-                    <ChartLegend
-                      content={<ChartLegendContent />}
-                      className="mt-6 flex-wrap gap-4"
-                    />
-                  </PieChart>
-                </ChartContainer>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+      {/* Charts Section */}
+      <div className="grid gap-6 px-6 max-w-[1600px] mx-auto grid-cols-1 lg:grid-cols-3">
+        {/* Card 1 */}
+        <Card className="flex flex-col border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden bg-white">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-base font-semibold text-gray-800 font-montserrat">
+              Highest package per batch (LPA)
+            </CardTitle>
+            <CardDescription>Salary distribution over years</CardDescription>
+          </CardHeader>
+          <CardContent className="flex-1 pb-6 px-4">
+            <div className="h-[250px] w-full">
+              <ChartContainer config={chartConfig} className="h-full w-full">
+                <BarChart accessibilityLayer data={placementData} margin={{ top: 20, right: 0, left: -20, bottom: 0 }}>
+                  <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="#e5e7eb" />
+                  <XAxis
+                    dataKey="batch"
+                    tickLine={false}
+                    axisLine={false}
+                    tick={{ fill: "#6b7280", fontSize: 12 }}
+                    tickMargin={10}
+                  />
+                  <YAxis
+                    tickLine={false}
+                    axisLine={false}
+                    tick={{ fill: "#6b7280", fontSize: 12 }}
+                    tickFormatter={(value) => `${value} L`}
+                    ticks={[0, 10, 20, 30, 40, 50, 60]}
+                    domain={[0, 60]}
+                  />
+                  <ChartTooltip cursor={{ fill: "rgba(0,0,0,0.05)" }} content={<ChartTooltipContent indicator="dashed" />} />
+                  <Bar dataKey="highestPackage" radius={[6, 6, 0, 0]} maxBarSize={60}>
+                    {placementData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.fill} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ChartContainer>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Card 2 */}
+        <Card className="flex flex-col border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden bg-white">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-base font-semibold text-gray-800 font-montserrat">
+              Placement Rate (%)
+            </CardTitle>
+            <CardDescription>Batch overview and growth trend</CardDescription>
+          </CardHeader>
+          <CardContent className="flex-1 pb-6 px-4">
+            <div className="h-[250px] w-full">
+              <ChartContainer config={chartConfig} className="h-full w-full">
+                <BarChart accessibilityLayer data={placementData} margin={{ top: 20, right: 0, left: -20, bottom: 0 }}>
+                  <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="#e5e7eb" />
+                  <XAxis
+                    dataKey="batch"
+                    tickLine={false}
+                    axisLine={false}
+                    tick={{ fill: "#6b7280", fontSize: 12 }}
+                    tickMargin={10}
+                  />
+                  <YAxis
+                    tickLine={false}
+                    axisLine={false}
+                    tick={{ fill: "#6b7280", fontSize: 12 }}
+                    tickFormatter={(value) => `${value}%`}
+                    ticks={[0, 20, 40, 60, 80, 100]}
+                    domain={[0, 100]}
+                  />
+                  <ChartTooltip cursor={{ fill: "rgba(0,0,0,0.05)" }} content={<ChartTooltipContent indicator="dashed" />} />
+                  <Bar dataKey="placementRate" radius={[6, 6, 0, 0]} maxBarSize={60}>
+                    {placementData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.fill} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ChartContainer>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Card 3 */}
+        <Card className="flex flex-col border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden bg-white">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-base font-semibold text-gray-800 font-montserrat">
+              Companies visiting campus
+            </CardTitle>
+            <CardDescription>Growing recruiter interest over time</CardDescription>
+          </CardHeader>
+          <CardContent className="flex-1 pb-6 px-4">
+            <div className="h-[250px] w-full">
+              <ChartContainer config={chartConfig} className="h-full w-full">
+                <BarChart accessibilityLayer data={placementData} margin={{ top: 20, right: 0, left: -20, bottom: 0 }}>
+                  <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="#e5e7eb" />
+                  <XAxis
+                    dataKey="batch"
+                    tickLine={false}
+                    axisLine={false}
+                    tick={{ fill: "#6b7280", fontSize: 12 }}
+                    tickMargin={10}
+                  />
+                  <YAxis
+                    tickLine={false}
+                    axisLine={false}
+                    tick={{ fill: "#6b7280", fontSize: 12 }}
+                    ticks={[0, 5, 10, 15, 20, 25]}
+                    domain={[0, 25]}
+                  />
+                  <ChartTooltip cursor={{ fill: "rgba(0,0,0,0.05)" }} content={<ChartTooltipContent indicator="dashed" />} />
+                  <Bar dataKey="companiesVisited" radius={[6, 6, 0, 0]} maxBarSize={60}>
+                    {placementData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.fill} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ChartContainer>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default PlacementStats;

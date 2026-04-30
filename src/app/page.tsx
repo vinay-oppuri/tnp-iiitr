@@ -3,7 +3,7 @@ import Image from "next/image";
 import { AboutIIITR, Thoughts } from "@/data/Home";
 import HeroButtons from "@/components/landing/HeroButtons";
 
-import PlacementStatsSummary from "@/components/landing/PlacementStats";
+import PlacementStatsSummary from "@/components/landing/PlacementsHightlight";
 import PlacementStats from "@/components/shared/PlacementStats";
 import ReusableCard from "@/components/shared/Message";
 import WhyRecruitUs from "@/components/landing/WhyRecruitUs";
@@ -11,8 +11,7 @@ import RecruitmentTimeline from "@/components/landing/RecruitmentTimeline";
 import Display from "@/components/shared/Display";
 import WhatWeOfferDisplay from "@/components/landing/WhatWeOfferDisplay";
 import { Companies } from "@/data/Companies";
-import BarItems from "@/data/BarItems";
-
+import PlacementHighlights from "@/components/shared/PlacementStats";
 export default function HomePage() {
 
     return (

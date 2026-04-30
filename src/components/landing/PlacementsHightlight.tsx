@@ -13,7 +13,7 @@ export default function PlacementStatsSummary() {
                     <div
                         key={index}
                         className="flex flex-col items-center justify-center space-y-2 text-center"
-                       
+
                         data-aos-delay={index * 100}
                     >
                         <div className="font-display text-3xl font-bold text-indigo-900 sm:text-4xl md:text-5xl">
