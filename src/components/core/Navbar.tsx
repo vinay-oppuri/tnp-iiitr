@@ -108,7 +108,7 @@ export default function Navbar() {
                         onClick={() => router.push("/")}
                         className="group flex h-auto items-center gap-3 rounded-md p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 hover:bg-transparent"
                     >
-                        <Image src="/logos/tnp.svg" alt="TNP IIITR logo" width={36} height={36} className={cn("h-9 w-9 transition-all", isTransparent && "brightness-0 invert")} priority />
+                        <Image src="/logos/iiitr.png" alt="TNP IIITR logo" width={36} height={36} className="h-9 w-full brightness-0 invert" priority />
                         <div className="leading-tight text-left">
                             <p className={cn("text-[10px] font-medium uppercase tracking-[0.2em] transition-colors", isTransparent ? "text-slate-300" : "text-slate-500")}>TNP Cell</p>
                             <p className="font-display text-sm font-semibold transition-colors text-white">IIIT Raichur</p>

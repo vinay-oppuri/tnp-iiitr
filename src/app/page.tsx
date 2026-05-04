@@ -8,6 +8,7 @@ import PlacementStats from "@/components/shared/PlacementStats";
 import ReusableCard from "@/components/shared/Message";
 import Display from "@/components/shared/Display";
 import { Companies } from "@/data/Companies";
+import RecruitmentTimeline from "@/components/shared/RecruitmentTimeline";
 export default function HomePage() {
 
     return (
@@ -93,11 +94,10 @@ export default function HomePage() {
                 <div className="mt-16 w-full flex justify-center">
                     <PlacementStats />
                 </div>
+                <div className="w-full">
+                    <RecruitmentTimeline />
+                </div>
             </section>
-
-
-
-
 
             <section className="section-shell relative z-10 py-10 pb-20 sm:py-14 sm:pb-24">
                 <Display collection={Companies} />

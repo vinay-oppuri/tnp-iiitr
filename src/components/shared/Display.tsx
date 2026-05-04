@@ -51,7 +51,7 @@ export default function Display({ collection }: DisplayProps) {
 
     return (
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
-            <h3 className="font-display mb-10 text-center text-2xl font-semibold text-slate-800 sm:mb-12 sm:text-3xl">
+            <h3 className="section-sub-title px-2 mb-12 sm:mb-16">
                 Past Recruiters
             </h3>
             <div className="flex flex-col gap-6 sm:gap-10 overflow-hidden">

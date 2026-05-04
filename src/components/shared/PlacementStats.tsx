@@ -53,8 +53,8 @@ const PlacementStats: React.FC = () => {
   return (
     <section className="w-full bg-[#f9f9fc] pb-0 md:pb-20">
       {/* Header */}
-      <div className="text-center mt-0 md:mt-20 mb-12 px-4">
-        <h2 className="font-poppins text-2xl sm:text-4xl font-bold text-[rgba(53,22,107,1)] mb-2">
+      <div className="mt-0 md:mt-20 mb-12 px-4">
+        <h2 className="section-sub-title px-2 mb-12 sm:mb-16">
           Placement Stats
         </h2>
       </div>

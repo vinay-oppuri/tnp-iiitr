@@ -29,7 +29,7 @@ export default function HeroButtons() {
             <Button
                 variant="outline"
                 size="lg"
-                className="group w-[70%] sm:w-auto h-11 sm:h-14 px-3 sm:px-4 gap-2 sm:gap-3 rounded-lg sm:rounded-xl border-white/10 bg-white/5 text-white backdrop-blur-sm transition-all hover:bg-white/10"
+                className="group w-[70%] sm:w-auto h-11 sm:h-14 px-3 sm:px-4 gap-2 sm:gap-3 rounded-lg sm:rounded-xl border-white/10 bg-white/5 text-white/80 backdrop-blur-sm transition-all hover:bg-white/10 hover:text-white"
                 asChild
             >
                 <Link href="/files/INTERNSHIP_BROCHURE.pdf" target="_blank">
@@ -46,7 +46,7 @@ export default function HeroButtons() {
             <Button
                 variant="outline"
                 size="lg"
-                className="group w-[70%] sm:w-auto h-11 sm:h-14 px-3 sm:px-4 gap-2 sm:gap-3 rounded-lg sm:rounded-xl border-white/10 bg-white/5 text-white backdrop-blur-sm transition-all hover:bg-white/10"
+                className="group w-[70%] sm:w-auto h-11 sm:h-14 px-3 sm:px-4 gap-2 sm:gap-3 rounded-lg sm:rounded-xl border-white/10 bg-white/5 text-white/80 backdrop-blur-sm transition-all hover:bg-white/10 hover:text-white"
                 asChild
             >
                 <Link href="https://forms.gle/c8aXW35ay6L34Dro9" target="_blank">
