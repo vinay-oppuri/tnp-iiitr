@@ -7,50 +7,56 @@ type DisplayProps = {
 };
 
 export default function Display({ collection }: DisplayProps) {
+    const mid = Math.ceil(collection.length / 2);
+    const row1 = collection.slice(0, mid);
+    const row2 = collection.slice(mid);
+
+    const renderMarqueeRow = (items: CompanyItem[], reverse: boolean = false) => {
+        return (
+            <div className="flex w-full overflow-hidden group [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+                <div className={cn("flex shrink-0 min-w-full justify-around gap-8 py-4 animate-marquee", reverse && "animate-marquee-reverse", "group-hover:[animation-play-state:paused]")}>
+                    {items.map((item) => (
+                        <div key={item.id} className="relative flex h-20 w-32 sm:h-24 sm:w-40 shrink-0 items-center justify-center opacity-80 transition-all hover:opacity-100 hover:scale-110">
+                            {item.url ? (
+                                <a target="_blank" rel="noreferrer" href={item.url} className="relative h-full w-full">
+                                    <Image src={item.image} alt={item.name} fill className="object-contain" sizes="160px" />
+                                </a>
+                            ) : (
+                                <div className="relative h-full w-full">
+                                    <Image src={item.image} alt={item.name} fill className="object-contain" sizes="160px" />
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+                {/* Duplicate for seamless loop */}
+                <div aria-hidden="true" className={cn("flex shrink-0 min-w-full justify-around gap-8 py-4 animate-marquee", reverse && "animate-marquee-reverse", "group-hover:[animation-play-state:paused]")}>
+                    {items.map((item) => (
+                        <div key={`${item.id}-dup`} className="relative flex h-20 w-32 sm:h-24 sm:w-40 shrink-0 items-center justify-center opacity-80 transition-all hover:opacity-100 hover:scale-110">
+                            {item.url ? (
+                                <a target="_blank" rel="noreferrer" href={item.url} className="relative h-full w-full">
+                                    <Image src={item.image} alt={item.name} fill className="object-contain" sizes="160px" />
+                                </a>
+                            ) : (
+                                <div className="relative h-full w-full">
+                                    <Image src={item.image} alt={item.name} fill className="object-contain" sizes="160px" />
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    };
+
     return (
-        <div className="mx-auto w-full">
-            <h3 className="font-display mb-6 text-center text-2xl font-semibold text-indigo-900 sm:mb-8 sm:text-3xl">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
+            <h3 className="font-display mb-10 text-center text-2xl font-semibold text-slate-800 sm:mb-12 sm:text-3xl">
                 Past Recruiters
             </h3>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-                {collection.map((item) => {
-                    const image = item.image;
-
-                    if (item.url) {
-                        return (
-                            <a
-                                key={item.id}
-                                target="_blank"
-                                rel="noreferrer"
-                                href={item.url}
-                                className={cn(
-                                    "relative flex h-28 items-center justify-center rounded-2xl border border-slate-200/80 bg-white/90 p-4 shadow-sm backdrop-blur-xl transition hover:-translate-y-0.5 hover:shadow-md overflow-hidden"
-                                )}
-                               
-                               
-                            >
-                                <div className="relative h-full w-full">
-                                    <Image src={image} alt={item.name} fill className="object-contain" sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw" />
-                                </div>
-                            </a>
-                        );
-                    }
-
-                    return (
-                        <div
-                            key={item.id}
-                            className={cn(
-                                "relative flex h-28 items-center justify-center rounded-2xl border border-slate-200/80 bg-white/90 p-4 shadow-sm backdrop-blur-xl transition hover:-translate-y-0.5 hover:shadow-md overflow-hidden"
-                            )}
-                           
-                           
-                        >
-                            <div className="relative h-full w-full">
-                                <Image src={image} alt={item.name} fill className="object-contain" sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw" />
-                            </div>
-                        </div>
-                    );
-                })}
+            <div className="flex flex-col gap-6 sm:gap-10 overflow-hidden">
+                {renderMarqueeRow(row1)}
+                {renderMarqueeRow(row2, true)}
             </div>
         </div>
     );

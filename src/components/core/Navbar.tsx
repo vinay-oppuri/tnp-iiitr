@@ -19,6 +19,7 @@ import { ScrollToTop } from "../ui/scroll-to-top";
 type NavItem = {
     label: string;
     target: string;
+    href?: string;
 };
 
 type NavLink = {
@@ -37,9 +38,9 @@ const menuLinks: NavLink[] = [
 const sectionLinks: NavItem[] = [
     { label: "Home", target: "home" },
     { label: "About Us", target: "aboutUs" },
-    { label: "What We Offer", target: "whatWeOffer" },
-    { label: "Why Recruit Us", target: "recruit" },
-    { label: "Recruitment Process", target: "rProcess" },
+    { label: "What We Offer", target: "whatWeOffer", href: "/what-we-offer" },
+    { label: "Why Recruit Us", target: "recruit", href: "/why-recruit-us" },
+    { label: "Recruitment Process", target: "rProcess", href: "/recruitment-process" },
 ];
 
 type MenuLink = {
@@ -72,12 +73,16 @@ export default function Navbar() {
         setMobileCompaniesOpen(false);
     }, [pathname]);
 
-    function jumpToSection(target: string) {
-        if (pathname !== "/") {
-            router.push(`/#${target}`);
+    function jumpToSection(item: NavItem) {
+        if (item.href) {
+            router.push(item.href);
             return;
         }
-        document.getElementById(target)?.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (pathname !== "/") {
+            router.push(`/#${item.target}`);
+            return;
+        }
+        document.getElementById(item.target)?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
     function closeMobileMenu() {
@@ -138,7 +143,7 @@ export default function Navbar() {
                                         ? "text-slate-300 hover:text-white hover:bg-white/10"
                                         : "text-slate-300 hover:text-white hover:bg-white/10"
                                 )}
-                                onClick={() => jumpToSection(item.target)}
+                                onClick={() => jumpToSection(item)}
                             >
                                 {item.label}
                             </Button>
@@ -203,7 +208,7 @@ export default function Navbar() {
                                     variant="ghost"
                                     className="w-full justify-start text-slate-300 hover:text-white hover:bg-slate-800"
                                     onClick={() => {
-                                        jumpToSection(item.target);
+                                        jumpToSection(item);
                                         closeMobileMenu();
                                     }}
                                 >
