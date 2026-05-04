@@ -11,7 +11,6 @@ import RecruitmentTimeline from "@/components/landing/RecruitmentTimeline";
 import Display from "@/components/shared/Display";
 import WhatWeOfferDisplay from "@/components/landing/WhatWeOfferDisplay";
 import { Companies } from "@/data/Companies";
-import PlacementHighlights from "@/components/shared/PlacementStats";
 export default function HomePage() {
 
     return (
@@ -26,15 +25,15 @@ export default function HomePage() {
                 />
                 <div className="absolute inset-0 bg-slate-900/70" />
 
-                <div className="section-shell relative z-10 flex min-h-screen flex-col items-center justify-center pt-20 pb-10">
+                <div className="section-shell relative z-10 flex min-h-screen flex-col items-center justify-center">
                     <div className="mx-auto w-full max-w-5xl">
                         <div className="flex flex-col items-center justify-center gap-6 text-center md:flex-row md:gap-10 md:text-left">
                             <Image src="/logos/tnp.svg" alt="TNP IIITR Logo" width={200} height={200} className="h-[120px] w-[120px] object-contain sm:h-[200px] sm:w-[200px] brightness-0 invert" />
                             <div className="space-y-3">
-                                <h1 className="font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+                                <h1 className="font-display text-2xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
                                     Training and <br className="hidden lg:block" /> Placement Cell
                                 </h1>
-                                <p className="text-sm font-medium tracking-wide text-slate-300 sm:text-base md:text-lg">
+                                <p className="text-sm font-medium tracking-wide text-slate-300 sm:text-base">
                                     Indian Institute of Information Technology, Raichur
                                 </p>
                                 <HeroButtons />
@@ -52,11 +51,11 @@ export default function HomePage() {
 
             <section className="flex flex-col gap-8 section-shell relative z-10 py-16 sm:py-20" id="scrollTO">
                 <div id="aboutUs" className="scroll-mt-32">
-                    <h2 className="section-title">About Us</h2>
-                    <div className="flex gap-8 mt-6 rounded-3xl border border-slate-200/80 bg-white/85 p-6 shadow-soft backdrop-blur-xl sm:p-8">
-                        <p className="text-base leading-relaxed text-slate-700 sm:text-lg">{AboutIIITR}</p>
-                        <div className="relative w-full max-w-[500px] shrink-0 lg:w-1/2">
-                            <div className="aspect-square w-80 overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-100 shadow-soft">
+                    <h2 className="section-title px-2">About Us</h2>
+                    <div className="flex flex-col lg:flex-row gap-8 mt-6 rounded-3xl border border-slate-200/80 bg-white/85 p-6 shadow-soft backdrop-blur-xl sm:p-8 items-center lg:items-start">
+                        <p className="text-sm leading-relaxed text-slate-700 sm:text-base">{AboutIIITR}</p>
+                        <div className="hidden md:flex relative w-full max-w-[500px] shrink-0 lg:w-1/2">
+                            <div className="aspect-square w-full max-w-[320px] overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-100 shadow-soft">
                                 <Image
                                     src="/images/banner/cover.webp"
                                     alt="About IIITR"

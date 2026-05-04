@@ -49,6 +49,7 @@
       radial-gradient(circle at bottom right, rgba(240, 244, 248, 0.4), transparent 40%),
       linear-gradient(180deg, #ffffff 0%, #f4f7fb 100%);
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -91,7 +92,7 @@
   }
 
   .section-title {
-    @apply font-display text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl;
+    @apply font-display text-3xl font-bold tracking-tight text-slate-800 sm:text-5xl;
   }
 
   .btn-primary {

@@ -22,12 +22,12 @@ export default function HeroButtons() {
                     <Button
                         variant="default"
                         size="lg"
-                        className="w-full bg-white text-slate-900 hover:bg-slate-200 sm:w-auto font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 flex items-center gap-2"
+                        className="w-[70%] md:w-full bg-white text-slate-900 hover:bg-slate-200 sm:w-auto font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 flex items-center gap-2"
                     >
                         For Companies <ChevronDown className="h-4 w-4" />
                     </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="start" className="w-56 bg-slate-900/95 border-slate-800 text-white backdrop-blur-md">
+                <DropdownMenuContent align="start" className="w-60 bg-slate-900/40 border-slate-800 text-white backdrop-blur-md">
                     {companyMenu.map((item) => (
                         <DropdownMenuItem
                             key={item.id}
@@ -47,12 +47,12 @@ export default function HeroButtons() {
                     <Button
                         variant="outline"
                         size="lg"
-                        className="w-full border-slate-400 bg-transparent text-white hover:bg-white/10 hover:text-white sm:w-auto flex items-center gap-2"
+                        className="w-[70%] md:w-full border-slate-400 bg-transparent text-white hover:bg-white/10 hover:text-white sm:w-auto flex items-center gap-2"
                     >
                         For Students <ChevronDown className="h-4 w-4" />
                     </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="start" className="w-56 bg-slate-900/95 border-slate-800 text-white backdrop-blur-md">
+                <DropdownMenuContent align="start" className="w-60 bg-slate-900/40 border-slate-800 text-white backdrop-blur-md">
                     {studentMenu.map((item) => (
                         <DropdownMenuItem
                             key={item.id}

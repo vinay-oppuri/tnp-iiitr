@@ -25,11 +25,11 @@ export default function RecruitmentTimeline() {
                                 {/* Content Card */}
                                 <div className="w-full pl-16 sm:pl-24">
                                     <div
-                                       
+
                                         className="relative flex w-full items-center overflow-hidden rounded-2xl border border-slate-200/60 bg-white p-6 shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg"
                                     >
                                         <div className="absolute left-0 top-0 h-full w-1 bg-indigo-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                                        <p className="text-base font-medium leading-relaxed text-slate-600 transition-colors duration-300 group-hover:text-slate-900">
+                                        <p className="text-sm leading-relaxed text-slate-600 transition-colors duration-300 sm:text-base group-hover:text-slate-900">
                                             {step}
                                         </p>
                                     </div>

@@ -24,13 +24,11 @@ import {
 } from "@/components/ui/card";
 
 const placementData = [
-  { batch: "2019-23", highestPackage: 45, placementRate: 68.80, companiesVisited: 16, fill: "#4285F4" },
-  { batch: "2020-24", highestPackage: 21.5, placementRate: 21.05, companiesVisited: 15, fill: "#F4B400" },
-  { batch: "2021-25", highestPackage: 48, placementRate: 41.03, companiesVisited: 19, fill: "#0F9D58" },
-  { batch: "2022-26*", highestPackage: 45, placementRate: 65.38, companiesVisited: 9, fill: "#A142F4" },
+  { batch: "2019-23", highestPackage: 45, placementRate: 68.80, companiesVisited: 16, fill: "url(#colorBlue)" },
+  { batch: "2020-24", highestPackage: 21.5, placementRate: 21.05, companiesVisited: 15, fill: "url(#colorOrange)" },
+  { batch: "2021-25", highestPackage: 48, placementRate: 41.03, companiesVisited: 19, fill: "url(#colorGreen)" },
+  { batch: "2022-26*", highestPackage: 45, placementRate: 65.38, companiesVisited: 9, fill: "url(#colorPurple)" },
 ];
-
-
 
 const chartConfig = {
   highestPackage: { label: "Highest Package (LPA)" },
@@ -43,7 +41,7 @@ const PlacementStats: React.FC = () => {
     <section className="w-full bg-[#f9f9fc] pb-20">
       {/* Header */}
       <div className="text-center mt-20 mb-12 px-4">
-        <h2 className="font-poppins text-4xl font-bold text-[rgba(53,22,107,1)] mb-2">
+        <h2 className="font-poppins text-3xl sm:text-4xl font-bold text-[rgba(53,22,107,1)] mb-2">
           Placement Stats
         </h2>
       </div>
@@ -53,15 +51,32 @@ const PlacementStats: React.FC = () => {
         {/* Card 1 */}
         <Card className="flex flex-col border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden bg-white">
           <CardHeader className="pb-2">
-            <CardTitle className="text-base font-semibold text-gray-800 font-montserrat">
+            <CardTitle className="text-sm sm:text-base font-semibold text-gray-800 font-montserrat flex gap-1 flex-wrap">
               Highest package per batch (LPA)
             </CardTitle>
-            <CardDescription>Salary distribution over years</CardDescription>
           </CardHeader>
           <CardContent className="flex-1 pb-6 px-4">
-            <div className="h-[250px] w-full">
+            <div className="h-[200px] sm:h-[250px] w-full">
               <ChartContainer config={chartConfig} className="h-full w-full">
                 <BarChart accessibilityLayer data={placementData} margin={{ top: 20, right: 0, left: -20, bottom: 0 }}>
+                  <defs>
+                    <linearGradient id="colorBlue" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#60A5FA" />
+                      <stop offset="100%" stopColor="#3B82F6" />
+                    </linearGradient>
+                    <linearGradient id="colorOrange" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#FBBF24" />
+                      <stop offset="100%" stopColor="#F59E0B" />
+                    </linearGradient>
+                    <linearGradient id="colorGreen" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#34D399" />
+                      <stop offset="100%" stopColor="#10B981" />
+                    </linearGradient>
+                    <linearGradient id="colorPurple" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#A78BFA" />
+                      <stop offset="100%" stopColor="#8B5CF6" />
+                    </linearGradient>
+                  </defs>
                   <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="#e5e7eb" />
                   <XAxis
                     dataKey="batch"
@@ -93,15 +108,14 @@ const PlacementStats: React.FC = () => {
         {/* Card 2 */}
         <Card className="flex flex-col border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden bg-white">
           <CardHeader className="pb-2">
-            <CardTitle className="text-base font-semibold text-gray-800 font-montserrat">
-              Placement Rate (%)
+            <CardTitle className="text-sm sm:text-base font-semibold text-gray-800 font-montserrat flex gap-1 flex-wrap">
+              Placement Rate (%) <span className="font-normal text-gray-500">— Batch overview</span>
             </CardTitle>
-            <CardDescription>Batch overview and growth trend</CardDescription>
           </CardHeader>
           <CardContent className="flex-1 pb-6 px-4">
-            <div className="h-[250px] w-full">
+            <div className="h-[200px] sm:h-[250px] w-full mt-4">
               <ChartContainer config={chartConfig} className="h-full w-full">
-                <BarChart accessibilityLayer data={placementData} margin={{ top: 20, right: 0, left: -20, bottom: 0 }}>
+                <BarChart accessibilityLayer data={placementData} margin={{ top: 30, right: 0, left: -20, bottom: 0 }}>
                   <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="#e5e7eb" />
                   <XAxis
                     dataKey="batch"
@@ -133,13 +147,12 @@ const PlacementStats: React.FC = () => {
         {/* Card 3 */}
         <Card className="flex flex-col border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden bg-white">
           <CardHeader className="pb-2">
-            <CardTitle className="text-base font-semibold text-gray-800 font-montserrat">
-              Companies visiting campus
+            <CardTitle className="text-sm sm:text-base font-semibold text-gray-800 font-montserrat flex gap-1 flex-wrap">
+              Companies visiting campus <span className="font-normal text-gray-500">— growing recruiter interest</span>
             </CardTitle>
-            <CardDescription>Growing recruiter interest over time</CardDescription>
           </CardHeader>
           <CardContent className="flex-1 pb-6 px-4">
-            <div className="h-[250px] w-full">
+            <div className="h-[200px] sm:h-[250px] w-full">
               <ChartContainer config={chartConfig} className="h-full w-full">
                 <BarChart accessibilityLayer data={placementData} margin={{ top: 20, right: 0, left: -20, bottom: 0 }}>
                   <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="#e5e7eb" />

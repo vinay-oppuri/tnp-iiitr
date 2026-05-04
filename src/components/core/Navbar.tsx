@@ -192,7 +192,7 @@ export default function Navbar() {
                 <div
                     id="mobile-menu"
                     className={cn(
-                        "mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/95 shadow-[0_12px_30px_rgba(0,0,0,0.2)] backdrop-blur-xl transition-all duration-300 md:hidden",
+                        "mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/80 shadow-[0_12px_30px_rgba(0,0,0,0.2)] backdrop-blur-xl transition-all duration-300 md:hidden",
                         isOpen ? "max-h-[720px] opacity-100" : "max-h-0 opacity-0 border-transparent"
                     )}
                 >
@@ -215,11 +215,11 @@ export default function Navbar() {
                         <li>
                             <Button
                                 variant="ghost"
-                                className="w-full justify-between text-slate-300 hover:text-white hover:bg-slate-800"
+                                className="w-full justify-between text-slate-300 hover:bg-transparent hover:text-slate-300 focus:bg-transparent focus:text-slate-300 active:bg-slate-800 active:text-white"
                                 onClick={() => setMobileCompaniesOpen((prev) => !prev)}
                             >
-                                For Companies
-                                <ChevronDown className={cn("h-4 w-4 transition-transform", mobileCompaniesOpen && "rotate-180")} />
+                                <span className={cn(mobileCompaniesOpen && "text-white")}>For Companies</span>
+                                <ChevronDown className={cn("h-4 w-4 transition-transform", mobileCompaniesOpen ? "rotate-180 text-white" : "")} />
                             </Button>
                             {mobileCompaniesOpen && (
                                 <div className="mt-1 space-y-1 pl-4 border-l border-slate-800 ml-4">

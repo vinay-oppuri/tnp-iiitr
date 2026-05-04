@@ -28,7 +28,7 @@ export default function WhatWeOfferDisplay() {
                         <div key={id} className="space-y-8">
                             <div className="space-y-4 text-center">
                                 <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">{item.title}</h2>
-                                <p className="mx-auto max-w-5xl text-base leading-relaxed text-slate-600 sm:text-lg md:text-justify lg:text-center">
+                                <p className="mx-auto max-w-5xl text-sm leading-relaxed text-slate-600 sm:text-base md:text-justify lg:text-center">
                                     {item.facilities}
                                 </p>
                             </div>
@@ -47,11 +47,11 @@ export default function WhatWeOfferDisplay() {
                                     }`}>
                                     {item.courses.map((course, idx) => (
                                         <Card key={idx} className="group overflow-hidden border-slate-200/60 bg-white/60 transition-all duration-300 hover:-translate-y-1 hover:border-slate-400 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
-                                            <CardContent className="flex h-full flex-col items-center justify-center gap-4 p-6 text-center">
-                                                <div className="rounded-xl bg-slate-100 p-4 transition-colors duration-300 group-hover:bg-slate-900 group-hover:text-white">
-                                                    <course.icon className="h-8 w-8" strokeWidth={1.5} />
+                                            <CardContent className="flex h-full flex-row sm:flex-col items-center justify-start sm:justify-center gap-4 p-4 text-left sm:text-center">
+                                                <div className="shrink-0 rounded-xl bg-slate-100 p-3 transition-colors duration-300 group-hover:bg-slate-900 group-hover:text-white">
+                                                    <course.icon className="h-6 w-6" strokeWidth={1.5} />
                                                 </div>
-                                                <h4 className="font-semibold text-slate-800 transition-colors duration-300 group-hover:text-slate-900">{course.name}</h4>
+                                                <h4 className="text-sm font-semibold leading-tight text-slate-800 transition-colors duration-300 group-hover:text-slate-900">{course.name}</h4>
                                             </CardContent>
                                         </Card>
                                     ))}
@@ -66,7 +66,7 @@ export default function WhatWeOfferDisplay() {
                         <div key={id} className="space-y-8">
                             <div className="space-y-4 text-center">
                                 <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">{item.title}</h2>
-                                <p className="mx-auto max-w-5xl text-base leading-relaxed text-slate-600 sm:text-lg md:text-justify lg:text-center">
+                                <p className="mx-auto max-w-5xl text-sm leading-relaxed text-slate-600 sm:text-base md:text-justify lg:text-center">
                                     {item.facilities}
                                 </p>
                             </div>
@@ -85,11 +85,11 @@ export default function WhatWeOfferDisplay() {
                                     }`}>
                                     {item.courses.slice(0, 8).map((course, idx) => (
                                         <Card key={idx} className="group overflow-hidden border-slate-200/60 bg-white/60 transition-all duration-300 hover:-translate-y-1 hover:border-slate-400 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
-                                            <CardContent className="flex h-full flex-col items-center justify-center gap-4 p-6 text-center">
-                                                <div className="rounded-xl bg-slate-100 p-4 transition-colors duration-300 group-hover:bg-slate-900 group-hover:text-white">
-                                                    <course.icon className="h-8 w-8" strokeWidth={1.5} />
+                                            <CardContent className="flex h-full flex-row sm:flex-col items-center justify-start sm:justify-center gap-4 p-4 text-left sm:text-center">
+                                                <div className="shrink-0 rounded-xl bg-slate-100 p-3 transition-colors duration-300 group-hover:bg-slate-900 group-hover:text-white">
+                                                    <course.icon className="h-6 w-6" strokeWidth={1.5} />
                                                 </div>
-                                                <h4 className="font-semibold text-slate-800 transition-colors duration-300 group-hover:text-slate-900">{course.name}</h4>
+                                                <h4 className="text-sm font-semibold leading-tight text-slate-800 transition-colors duration-300 group-hover:text-slate-900">{course.name}</h4>
                                             </CardContent>
                                         </Card>
                                     ))}
