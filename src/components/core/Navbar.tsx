@@ -40,7 +40,7 @@ const sectionLinks: NavItem[] = [
     { label: "About Us", target: "aboutUs" },
     { label: "What We Offer", target: "whatWeOffer", href: "/what-we-offer" },
     { label: "Why Recruit Us", target: "recruit", href: "/why-recruit-us" },
-    { label: "Recruitment Process", target: "rProcess", href: "/recruitment-process" },
+    { label: "Recruitment Process", target: "recruitmentProcess"},
 ];
 
 type MenuLink = {
