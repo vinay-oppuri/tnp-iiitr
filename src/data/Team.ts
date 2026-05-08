@@ -17,6 +17,13 @@ export const facultyIncharge: TeamMember[] = [
     },
     {
         id: "fic-2",
+        name: "Dr. Dheerendra",
+        role: "Placement Officer",
+        image: "/images/core-members/dheerendra.jpg",
+        email: "dheerendra@iiitr.ac.in",
+    },
+    {
+        id: "fic-3",
         name: "Abhijeet",
         role: "Consultant - Corporate Relation",
         image: "/images/core-members/abhijeet.jpeg",

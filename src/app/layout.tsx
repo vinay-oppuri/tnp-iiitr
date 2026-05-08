@@ -12,8 +12,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-    title: "TNP | IIIT Raichur",
-    description: "Official Training and Placement Cell of Indian Institute of Information Technology Raichur.",
+    title: "CSC | IIIT Raichur",
+    description: "Official Career Service Cell of Indian Institute of Information Technology Raichur.",
 };
 
 export default function Layout({

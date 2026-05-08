@@ -55,7 +55,7 @@ const PlacementStats: React.FC = () => {
       {/* Header */}
       <div className="mt-0 md:mt-20 mb-12 px-4">
         <h2 className="section-sub-title px-2 mb-12 sm:mb-16">
-          Placement Stats
+          Placement Statistics
         </h2>
       </div>
 

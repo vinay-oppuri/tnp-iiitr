@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import BarItems from "../../data/BarItems";
-import { Menu, X, ChevronDown, Users } from "lucide-react";
+import { Menu, X, ChevronDown, Users, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
     DropdownMenu,
@@ -108,9 +108,9 @@ export default function Navbar() {
                         onClick={() => router.push("/")}
                         className="group flex h-auto items-center gap-3 rounded-md p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 hover:bg-transparent"
                     >
-                        <Image src="/logos/iiitr.png" alt="TNP IIITR logo" width={36} height={36} className="h-9 w-full brightness-0 invert" priority />
+                        <Image src="/logos/iiitr.png" alt="CSC IIITR logo" width={36} height={36} className="h-9 w-full brightness-0 invert" priority />
                         <div className="leading-tight text-left">
-                            <p className={cn("text-[10px] font-medium uppercase tracking-[0.2em] transition-colors", isTransparent ? "text-slate-300" : "text-slate-500")}>TNP Cell</p>
+                            <p className={cn("text-[10px] font-medium uppercase tracking-[0.2em] transition-colors", isTransparent ? "text-slate-300" : "text-slate-500")}>CS Cell</p>
                             <p className="font-display text-sm font-semibold transition-colors text-white">IIIT Raichur</p>
                         </div>
                     </Button>
@@ -149,7 +149,7 @@ export default function Navbar() {
                             </Button>
                         ))}
 
-                        <DropdownMenu>
+                        {/* <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Button
                                     variant="ghost"
@@ -172,9 +172,23 @@ export default function Navbar() {
                                     </DropdownMenuItem>
                                 ))}
                             </DropdownMenuContent>
-                        </DropdownMenu>
+                        </DropdownMenu> */}
 
 
+
+                        <Button
+                            variant="ghost"
+                            onClick={() => router.push("/achievers")}
+                            className={cn(
+                                "ml-2 inline-flex h-10 items-center gap-2 rounded-full border px-4 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-cyan-400/70 focus-visible:ring-offset-0 text-white/80 hover:text-white",
+                                isTransparent
+                                    ? "border-white/20 bg-white/5 backdrop-blur-md hover:bg-white/10"
+                                    : "border-slate-700 bg-slate-800/80 hover:bg-slate-800"
+                            )}
+                        >
+                            <Sparkles className="h-4 w-4" />
+                            <span>Achievers</span>
+                        </Button>
 
                         <Button
                             variant="ghost"
@@ -218,14 +232,14 @@ export default function Navbar() {
                         ))}
 
                         <li>
-                            <Button
+                            {/* <Button
                                 variant="ghost"
                                 className="w-full justify-between text-slate-300 hover:bg-transparent hover:text-slate-300 focus:bg-transparent focus:text-slate-300 active:bg-slate-800 active:text-white"
                                 onClick={() => setMobileCompaniesOpen((prev) => !prev)}
                             >
                                 <span className={cn(mobileCompaniesOpen && "text-white")}>For Companies</span>
                                 <ChevronDown className={cn("h-4 w-4 transition-transform", mobileCompaniesOpen ? "rotate-180 text-white" : "")} />
-                            </Button>
+                            </Button> */}
                             {mobileCompaniesOpen && (
                                 <div className="mt-1 space-y-1 pl-4 border-l border-slate-800 ml-4">
                                     {companyMenu.map((item) => (
@@ -250,6 +264,22 @@ export default function Navbar() {
                         </li>
 
 
+
+                        <li>
+                            <Button
+                                variant="ghost"
+                                className="mt-2 flex h-12 w-full items-center justify-start gap-3 rounded-xl border border-slate-700 bg-slate-800/90 px-4 text-white transition-colors hover:bg-slate-800"
+                                onClick={() => {
+                                    router.push("/achievers");
+                                    closeMobileMenu();
+                                }}
+                            >
+                                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-700 text-slate-100">
+                                    <Sparkles className="h-4 w-4 text-cyan-400" />
+                                </span>
+                                <span className="text-sm font-medium">Special Mentions</span>
+                            </Button>
+                        </li>
 
                         <li>
                             <Button

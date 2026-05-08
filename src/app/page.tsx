@@ -29,14 +29,14 @@ export default function HomePage() {
                             <div className="flex flex-col items-center justify-center gap-4 text-center md:flex-row md:gap-12 md:text-left">
                                 <Image 
                                     src="/logos/iiitr.png" 
-                                    alt="TNP IIITR Logo" 
+                                    alt="CSC IIITR Logo" 
                                     width={200} 
                                     height={200} 
                                     className="h-[120px] w-[120px] object-contain sm:h-[180px] sm:w-[180px] brightness-0 invert" 
                                 />
                                 <div className="space-y-4">
                                     <h1 className="font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-                                        Training and <br className="hidden lg:block" /> Placement Cell
+                                        Career <br className="hidden lg:block" /> Service Cell
                                     </h1>
                                     <p className="max-w-2xl text-sm font-medium tracking-wide text-slate-300 sm:text-lg">
                                         Indian Institute of Information Technology, Raichur

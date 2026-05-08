@@ -12,7 +12,7 @@ export default function TeamPage() {
                         Meet Our <span className="text-cyan-600">Team</span>
                     </h1>
                     <p className="mt-6 text-base text-slate-600 sm:text-lg">
-                        The Training and Placement Cell at IIIT Raichur is driven by a dedicated group of faculty and student coordinators.
+                        The Career Service Cell at IIIT Raichur is driven by a dedicated group of faculty and student coordinators.
                     </p>
                 </div>
             </div>

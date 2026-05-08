@@ -1,6 +1,6 @@
-import React from "react";
-import { address, Contacts, FooterLinks } from "../../data/footerInfo";
+import { address, Contacts, FooterLinks } from "@/data/FooterInfo";
 import Image from "next/image";
+
 
 type FooterContact = {
     id: number;
@@ -27,7 +27,7 @@ export default function Footer() {
                         <div className="inline-flex items-center gap-3">
                             <Image src="/logos/iiitr.png" alt="IIITR Logo" width={36} height={36} className="h-12 w-12 rounded-md object-contain brightness-0 invert" />
                             <div>
-                                <p className="text-xs uppercase tracking-[0.14em] text-cyan-300">TNP Cell</p>
+                                <p className="text-xs uppercase tracking-[0.14em] text-cyan-300">CS Cell</p>
                                 <p className="font-display text-sm font-semibold text-white">IIIT Raichur</p>
                             </div>
                         </div>
