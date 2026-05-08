@@ -10,7 +10,7 @@ const Contacts = [
   {
     id: 3,
     name: "Dheerendra (Placement Officer)",
-    email: "tnp@iiitr.ac.in",
+    email: "dheerendra@iiitr.ac.in",
     phoneNum: "+91 9718053143",
   },
   {

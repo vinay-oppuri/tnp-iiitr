@@ -37,19 +37,36 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 const PlacementStats: React.FC = () => {
+  const [activeIndex, setActiveIndex] = React.useState(0);
+  const scrollRef = React.useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const scrollPosition = scrollRef.current.scrollLeft;
+      const cardWidth = scrollRef.current.offsetWidth;
+      const newIndex = Math.round(scrollPosition / cardWidth);
+      if (newIndex !== activeIndex) {
+        setActiveIndex(newIndex);
+      }
+    }
+  };
   return (
-    <section className="w-full bg-[#f9f9fc] pb-20">
+    <section className="w-full bg-[#f9f9fc] pb-0 md:pb-20">
       {/* Header */}
-      <div className="text-center mt-20 mb-12 px-4">
-        <h2 className="font-poppins text-3xl sm:text-4xl font-bold text-[rgba(53,22,107,1)] mb-2">
-          Placement Stats
+      <div className="mt-0 md:mt-20 mb-12 px-4">
+        <h2 className="section-sub-title px-2 mb-12 sm:mb-16">
+          Placement Statistics
         </h2>
       </div>
 
       {/* Charts Section */}
-      <div className="grid gap-6 px-6 max-w-[1600px] mx-auto grid-cols-1 lg:grid-cols-3">
+      <div 
+        ref={scrollRef}
+        onScroll={handleScroll}
+        className="flex lg:grid lg:grid-cols-3 gap-6 px-6 max-w-[1600px] mx-auto overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory pb-4 lg:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+      >
         {/* Card 1 */}
-        <Card className="flex flex-col border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden bg-white">
+        <Card className="flex flex-col shrink-0 w-[85vw] sm:w-[450px] lg:w-full snap-center border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden bg-white">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm sm:text-base font-semibold text-gray-800 font-montserrat flex gap-1 flex-wrap">
               Highest package per batch (LPA)
@@ -106,7 +123,7 @@ const PlacementStats: React.FC = () => {
         </Card>
 
         {/* Card 2 */}
-        <Card className="flex flex-col border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden bg-white">
+        <Card className="flex flex-col shrink-0 w-[85vw] sm:w-[450px] lg:w-full snap-center border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden bg-white">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm sm:text-base font-semibold text-gray-800 font-montserrat flex gap-1 flex-wrap">
               Placement Rate (%) <span className="font-normal text-gray-500">— Batch overview</span>
@@ -145,7 +162,7 @@ const PlacementStats: React.FC = () => {
         </Card>
 
         {/* Card 3 */}
-        <Card className="flex flex-col border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden bg-white">
+        <Card className="flex flex-col shrink-0 w-[85vw] sm:w-[450px] lg:w-full snap-center border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden bg-white">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm sm:text-base font-semibold text-gray-800 font-montserrat flex gap-1 flex-wrap">
               Companies visiting campus <span className="font-normal text-gray-500">— growing recruiter interest</span>
@@ -181,6 +198,18 @@ const PlacementStats: React.FC = () => {
             </div>
           </CardContent>
         </Card>
+      </div>
+
+      {/* Pagination Dots - Mobile Only */}
+      <div className="flex lg:hidden justify-center gap-2 mt-4">
+        {[0, 1, 2].map((i) => (
+          <div
+            key={i}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              activeIndex === i ? "w-6 bg-indigo-600" : "w-1.5 bg-slate-300"
+            }`}
+          />
+        ))}
       </div>
     </section>
   );

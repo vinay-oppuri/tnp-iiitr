@@ -6,18 +6,16 @@ import HeroButtons from "@/components/landing/HeroButtons";
 import PlacementStatsSummary from "@/components/landing/PlacementsHightlight";
 import PlacementStats from "@/components/shared/PlacementStats";
 import ReusableCard from "@/components/shared/Message";
-import WhyRecruitUs from "@/components/landing/WhyRecruitUs";
-import RecruitmentTimeline from "@/components/landing/RecruitmentTimeline";
 import Display from "@/components/shared/Display";
-import WhatWeOfferDisplay from "@/components/landing/WhatWeOfferDisplay";
 import { Companies } from "@/data/Companies";
+import RecruitmentTimeline from "@/components/shared/RecruitmentTimeline";
 export default function HomePage() {
 
     return (
         <div id="home" className="relative overflow-hidden">
             <section className="relative min-h-screen overflow-hidden bg-slate-900/70">
                 <Image
-                    src="/images/banner/cover.webp"
+                    src="/images/banner/iiitr.png"
                     alt="IIIT Raichur campus background"
                     fill
                     priority
@@ -26,16 +24,26 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-slate-900/70" />
 
                 <div className="section-shell relative z-10 flex min-h-screen flex-col items-center justify-center">
-                    <div className="mx-auto w-full max-w-5xl">
-                        <div className="flex flex-col items-center justify-center gap-6 text-center md:flex-row md:gap-10 md:text-left">
-                            <Image src="/logos/tnp.svg" alt="TNP IIITR Logo" width={200} height={200} className="h-[120px] w-[120px] object-contain sm:h-[200px] sm:w-[200px] brightness-0 invert" />
-                            <div className="space-y-3">
-                                <h1 className="font-display text-2xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-                                    Training and <br className="hidden lg:block" /> Placement Cell
-                                </h1>
-                                <p className="text-sm font-medium tracking-wide text-slate-300 sm:text-base">
-                                    Indian Institute of Information Technology, Raichur
-                                </p>
+                    <div className="mx-auto w-full max-w-6xl">
+                        <div className="flex flex-col gap-6">
+                            <div className="flex flex-col items-center justify-center gap-4 text-center md:flex-row md:gap-12 md:text-left">
+                                <Image 
+                                    src="/logos/iiitr.png" 
+                                    alt="CSC IIITR Logo" 
+                                    width={200} 
+                                    height={200} 
+                                    className="h-[120px] w-[120px] object-contain sm:h-[180px] sm:w-[180px] brightness-0 invert" 
+                                />
+                                <div className="space-y-4">
+                                    <h1 className="font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+                                        Career <br className="hidden lg:block" /> Service Cell
+                                    </h1>
+                                    <p className="max-w-2xl text-sm font-medium tracking-wide text-slate-300 sm:text-lg">
+                                        Indian Institute of Information Technology, Raichur
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="flex justify-center">
                                 <HeroButtons />
                             </div>
                         </div>
@@ -53,17 +61,18 @@ export default function HomePage() {
                 <div id="aboutUs" className="scroll-mt-32">
                     <h2 className="section-title px-2">About Us</h2>
                     <div className="flex flex-col lg:flex-row gap-8 mt-6 rounded-3xl border border-slate-200/80 bg-white/85 p-6 shadow-soft backdrop-blur-xl sm:p-8 items-center lg:items-start">
-                        <p className="text-sm leading-relaxed text-slate-700 sm:text-base">{AboutIIITR}</p>
-                        <div className="hidden md:flex relative w-full max-w-[500px] shrink-0 lg:w-1/2">
-                            <div className="aspect-square w-full max-w-[320px] overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-100 shadow-soft">
-                                <Image
-                                    src="/images/banner/cover.webp"
-                                    alt="About IIITR"
-                                    fill
-                                    className="object-cover transition-transform duration-700 hover:scale-105"
-                                />
-                            </div>
+                        <p className="w-full lg:w-2/3 text-sm leading-relaxed text-slate-700 sm:text-base">
+                            {AboutIIITR}
+                        </p>
+                        <div className="relative hidden lg:flex w-full lg:w-1/3 h-64 overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-100 shadow-soft">
+                            <Image
+                                src="/images/banner/iiitr.png"
+                                alt="About IIITR"
+                                fill
+                                className="object-cover object-center"
+                            />
                         </div>
+
                     </div>
                 </div>
 
@@ -85,29 +94,7 @@ export default function HomePage() {
                 <div className="mt-16 w-full flex justify-center">
                     <PlacementStats />
                 </div>
-
-                <WhatWeOfferDisplay />
-            </section>
-
-            <section className="section-shell relative z-10 py-6 sm:py-8">
-                <div id="recruit" className="scroll-mt-32"></div>
-                <h2 className="section-title text-center">
-                    Why Recruit Us
-                </h2>
-                <div className="mt-8 sm:mt-10">
-                    <WhyRecruitUs />
-                </div>
-            </section>
-
-            <section className="section-shell relative z-10 py-10 sm:py-14">
-                <h2
-                    className="section-title scroll-mt-32 text-center"
-
-                    id="rProcess"
-                >
-                    Recruitment Process
-                </h2>
-                <div className="mt-8 sm:mt-10">
+                <div className="w-full">
                     <RecruitmentTimeline />
                 </div>
             </section>
