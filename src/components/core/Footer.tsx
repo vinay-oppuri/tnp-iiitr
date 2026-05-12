@@ -25,7 +25,7 @@ export default function Footer() {
                 <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                     <div>
                         <div className="inline-flex items-center gap-3">
-                            <Image src="/logos/iiitr.png" alt="IIITR Logo" width={36} height={36} className="h-12 w-12 rounded-md object-contain brightness-0 invert" />
+                            <Image src="/logos/iiitr.png" alt="IIITR Logo" width={36} height={36} style={{ width: "auto", height: "auto" }} className="h-12 w-12 rounded-md object-contain brightness-0 invert" />
                             <div>
                                 <p className="text-xs uppercase tracking-[0.14em] text-cyan-300">CS Cell</p>
                                 <p className="font-display text-sm font-semibold text-white">IIIT Raichur</p>

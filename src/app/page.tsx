@@ -18,6 +18,7 @@ export default function HomePage() {
                     src="/images/banner/iiitr.png"
                     alt="IIIT Raichur campus background"
                     fill
+                    sizes="100vw"
                     priority
                     className="absolute inset-0 object-cover opacity-30 mix-blend-overlay"
                 />
@@ -32,6 +33,7 @@ export default function HomePage() {
                                     alt="CSC IIITR Logo" 
                                     width={200} 
                                     height={200} 
+                                    style={{ width: "auto", height: "auto" }}
                                     className="h-[120px] w-[120px] object-contain sm:h-[180px] sm:w-[180px] brightness-0 invert" 
                                 />
                                 <div className="space-y-4">
@@ -67,8 +69,9 @@ export default function HomePage() {
                         <div className="relative hidden lg:flex w-full lg:w-1/3 h-64 overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-100 shadow-soft">
                             <Image
                                 src="/images/banner/iiitr.png"
-                                alt="About IIITR"
+                                alt=""
                                 fill
+                                sizes="(max-width: 1024px) 100vw, 33vw"
                                 className="object-cover object-center"
                             />
                         </div>

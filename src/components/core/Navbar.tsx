@@ -108,7 +108,7 @@ export default function Navbar() {
                         onClick={() => router.push("/")}
                         className="group flex h-auto items-center gap-3 rounded-md p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 hover:bg-transparent"
                     >
-                        <Image src="/logos/iiitr.png" alt="CSC IIITR logo" width={36} height={36} className="h-9 w-full brightness-0 invert" priority />
+                        <Image src="/logos/iiitr.png" alt="CSC IIITR logo" width={36} height={36} style={{ width: "auto", height: "auto" }} className="h-9 w-auto brightness-0 invert" priority />
                         <div className="leading-tight text-left">
                             <p className={cn("text-[10px] font-medium uppercase tracking-[0.2em] transition-colors", isTransparent ? "text-slate-300" : "text-slate-500")}>CS Cell</p>
                             <p className="font-display text-sm font-semibold transition-colors text-white">IIIT Raichur</p>
@@ -176,7 +176,7 @@ export default function Navbar() {
 
 
 
-                        <Button
+                        {/* <Button
                             variant="ghost"
                             onClick={() => router.push("/achievers")}
                             className={cn(
@@ -188,7 +188,7 @@ export default function Navbar() {
                         >
                             <Sparkles className="h-4 w-4" />
                             <span>Achievers</span>
-                        </Button>
+                        </Button> */}
 
                         <Button
                             variant="ghost"
@@ -265,7 +265,7 @@ export default function Navbar() {
 
 
 
-                        <li>
+                        {/* <li>
                             <Button
                                 variant="ghost"
                                 className="mt-2 flex h-12 w-full items-center justify-start gap-3 rounded-xl border border-slate-700 bg-slate-800/90 px-4 text-white transition-colors hover:bg-slate-800"
@@ -279,7 +279,7 @@ export default function Navbar() {
                                 </span>
                                 <span className="text-sm font-medium">Special Mentions</span>
                             </Button>
-                        </li>
+                        </li> */}
 
                         <li>
                             <Button

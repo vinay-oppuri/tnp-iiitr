@@ -34,6 +34,7 @@ export default function ReusableCard({
                             className="object-cover object-top transition-transform duration-500 hover:scale-105"
                             src={imgSrc || ""}
                             fill
+                            sizes="(max-width: 1024px) 100vw, 33vw"
                             alt={altText || writer || "profile"}
                         />
                     </div>

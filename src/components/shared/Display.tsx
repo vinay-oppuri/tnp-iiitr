@@ -17,15 +17,9 @@ export default function Display({ collection }: DisplayProps) {
                 <div className={cn("flex shrink-0 min-w-full justify-around gap-8 py-4 animate-marquee", reverse && "animate-marquee-reverse", "group-hover:[animation-play-state:paused]")}>
                     {items.map((item) => (
                         <div key={item.id} className="relative flex h-20 w-32 sm:h-24 sm:w-40 shrink-0 items-center justify-center opacity-80 transition-all hover:opacity-100 hover:scale-110">
-                            {item.url ? (
-                                <a target="_blank" rel="noreferrer" href={item.url} className="relative h-full w-full">
-                                    <Image src={item.image} alt={item.name} fill className="object-contain" sizes="160px" />
-                                </a>
-                            ) : (
-                                <div className="relative h-full w-full">
-                                    <Image src={item.image} alt={item.name} fill className="object-contain" sizes="160px" />
-                                </div>
-                            )}
+                            <div className="relative h-full w-full">
+                                <Image src={item.image} alt={item.name} fill className="object-contain" sizes="160px" />
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -33,15 +27,9 @@ export default function Display({ collection }: DisplayProps) {
                 <div aria-hidden="true" className={cn("flex shrink-0 min-w-full justify-around gap-8 py-4 animate-marquee", reverse && "animate-marquee-reverse", "group-hover:[animation-play-state:paused]")}>
                     {items.map((item) => (
                         <div key={`${item.id}-dup`} className="relative flex h-20 w-32 sm:h-24 sm:w-40 shrink-0 items-center justify-center opacity-80 transition-all hover:opacity-100 hover:scale-110">
-                            {item.url ? (
-                                <a target="_blank" rel="noreferrer" href={item.url} className="relative h-full w-full">
-                                    <Image src={item.image} alt={item.name} fill className="object-contain" sizes="160px" />
-                                </a>
-                            ) : (
-                                <div className="relative h-full w-full">
-                                    <Image src={item.image} alt={item.name} fill className="object-contain" sizes="160px" />
-                                </div>
-                            )}
+                            <div className="relative h-full w-full">
+                                <Image src={item.image} alt={item.name} fill className="object-contain" sizes="160px" />
+                            </div>
                         </div>
                     ))}
                 </div>
