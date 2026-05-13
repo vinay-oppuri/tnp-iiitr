@@ -8,16 +8,21 @@ const Contacts = [
     phoneNum: "+91 7081044993",
   },
   {
-    id: 3,
+    id: 2,
     name: "Dheerendra (Placement Officer)",
     email: "dheerendra@iiitr.ac.in",
     phoneNum: "+91 9718053143",
   },
   {
+    id: 3,
+    name: "Abhijeet (Consultant - Corporate Relations)",
+    email: "csc@iiitr.ac.in",
+    phoneNum: "+91 8302368549",
+  },
+  {
     id: 4,
     name: "IIIT, Raichur",
     email: "info@iiitr.ac.in",
-    // phoneNum: "040 - 2301 6002",
   },
 ];
 
@@ -61,6 +66,11 @@ const FooterLinks = [
     id: 7,
     name: "Reach Us",
     link: "https://iiitr.ac.in/reach_us.html",
+  },
+  {
+    id: 9,
+    name: "Placement Rules (Students)",
+    link: "/files/PLACEMENT_RULES.pdf",
   },
 ];
 

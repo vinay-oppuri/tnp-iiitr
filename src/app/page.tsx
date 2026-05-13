@@ -65,7 +65,7 @@ export default function HomePage() {
                         <p className="w-full lg:w-2/3 text-sm leading-relaxed text-slate-700 sm:text-base md:text-lg lg:text-base xl:text-lg">
                             {AboutIIITR}
                         </p>
-                        <div className="relative flex w-full lg:w-1/3 h-56 sm:h-72 lg:h-auto lg:min-h-[300px] overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-100 shadow-soft">
+                        <div className="relative hidden sm:flex w-full lg:w-1/3 h-56 sm:h-72 lg:h-auto lg:min-h-[300px] overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-100 shadow-soft">
                             <Image
                                 src="/images/banner/iiitr.png"
                                 alt=""

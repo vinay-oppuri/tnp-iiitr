@@ -13,6 +13,12 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import { ScrollToTop } from "../ui/scroll-to-top";
 
@@ -36,7 +42,6 @@ const menuLinks: NavLink[] = [
 ];
 
 const sectionLinks: NavItem[] = [
-    { label: "Home", target: "home" },
     { label: "About Us", target: "aboutUs" },
     { label: "What We Offer", target: "whatWeOffer", href: "/what-we-offer" },
     { label: "Why Recruit Us", target: "recruit", href: "/why-recruit-us" },
@@ -149,7 +154,7 @@ export default function Navbar() {
                             </Button>
                         ))}
 
-                        {/* <DropdownMenu>
+                        <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Button
                                     variant="ghost"
@@ -160,19 +165,25 @@ export default function Navbar() {
                                             : "text-slate-300 hover:text-white hover:bg-white/10"
                                     )}
                                 >
-                                    For Companies <ChevronDown className="ml-1 h-4 w-4" />
+                                    Rules <ChevronDown className="ml-1 h-4 w-4" />
                                 </Button>
                             </DropdownMenuTrigger>
-                            <DropdownMenuContent className="w-56" align="end">
-                                {companyMenu.map((item) => (
-                                    <DropdownMenuItem key={item.id} className="cursor-pointer p-0" asChild>
-                                        <Link href={item.href} target="_blank" rel="noopener noreferrer" className="w-full px-2 py-1.5">
-                                            {item.heading}
-                                        </Link>
-                                    </DropdownMenuItem>
-                                ))}
+                            <DropdownMenuContent
+                                className="w-48 border border-slate-700/80 bg-slate-900/90 backdrop-blur-xl text-slate-300 shadow-[0_8px_30px_rgba(0,0,0,0.3)] rounded-xl p-1"
+                                align="end"
+                            >
+                                <DropdownMenuItem className="cursor-pointer rounded-lg p-0 focus:bg-slate-800 focus:text-white" asChild>
+                                    <Link href="/files/INTERNSHIP_RULES.pdf" target="_blank" rel="noopener noreferrer" className="w-full px-3 py-2 text-sm text-slate-300 hover:text-white">
+                                        Internship Rules
+                                    </Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem className="cursor-pointer rounded-lg p-0 focus:bg-slate-800 focus:text-white" asChild>
+                                    <Link href="/files/PLACEMENT_RULES.pdf" target="_blank" rel="noopener noreferrer" className="w-full px-3 py-2 text-sm text-slate-300 hover:text-white">
+                                        Placement Rules
+                                    </Link>
+                                </DropdownMenuItem>
                             </DropdownMenuContent>
-                        </DropdownMenu> */}
+                        </DropdownMenu>
 
 
 
@@ -231,36 +242,34 @@ export default function Navbar() {
                             </li>
                         ))}
 
-                        <li>
-                            {/* <Button
-                                variant="ghost"
-                                className="w-full justify-between text-slate-300 hover:bg-transparent hover:text-slate-300 focus:bg-transparent focus:text-slate-300 active:bg-slate-800 active:text-white"
-                                onClick={() => setMobileCompaniesOpen((prev) => !prev)}
-                            >
-                                <span className={cn(mobileCompaniesOpen && "text-white")}>For Companies</span>
-                                <ChevronDown className={cn("h-4 w-4 transition-transform", mobileCompaniesOpen ? "rotate-180 text-white" : "")} />
-                            </Button> */}
-                            {mobileCompaniesOpen && (
-                                <div className="mt-1 space-y-1 pl-4 border-l border-slate-800 ml-4">
-                                    {companyMenu.map((item) => (
-                                        <Button
-                                            key={item.id}
-                                            variant="ghost"
-                                            className="w-full justify-start text-sm text-slate-400 hover:text-white hover:bg-slate-800"
-                                            asChild
+                        <li className="px-1">
+                            <Accordion type="single" collapsible className="w-full">
+                                <AccordionItem value="rules" className="border-b-0">
+                                    <AccordionTrigger className="justify-between px-3 py-2 text-sm font-medium text-slate-300 transition-all hover:bg-slate-800 hover:text-white hover:no-underline rounded-md">
+                                        Rules
+                                    </AccordionTrigger>
+                                    <AccordionContent className="pb-1 pt-1 ml-4 border-l border-slate-700/50 pl-4 flex flex-col gap-1 mt-1">
+                                        <Link
+                                            href="/files/INTERNSHIP_RULES.pdf"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={() => closeMobileMenu()}
+                                            className="flex w-full items-center py-2 text-sm text-slate-400 hover:text-white"
                                         >
-                                            <Link
-                                                href={item.href}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                onClick={() => closeMobileMenu()}
-                                            >
-                                                {item.heading}
-                                            </Link>
-                                        </Button>
-                                    ))}
-                                </div>
-                            )}
+                                            Internship Rules
+                                        </Link>
+                                        <Link
+                                            href="/files/PLACEMENT_RULES.pdf"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={() => closeMobileMenu()}
+                                            className="flex w-full items-center py-2 text-sm text-slate-400 hover:text-white"
+                                        >
+                                            Placement Rules
+                                        </Link>
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
                         </li>
 
 
