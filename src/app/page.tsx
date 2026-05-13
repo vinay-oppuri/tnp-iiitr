@@ -33,14 +33,13 @@ export default function HomePage() {
                                     alt="CSC IIITR Logo" 
                                     width={200} 
                                     height={200} 
-                                    style={{ width: "auto", height: "auto" }}
-                                    className="h-[120px] w-[120px] object-contain sm:h-[180px] sm:w-[180px] brightness-0 invert" 
+                                    className="h-[120px] w-[120px] object-contain sm:h-[150px] sm:w-[150px] md:h-[180px] md:w-[180px] brightness-0 invert" 
                                 />
                                 <div className="space-y-4">
                                     <h1 className="font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
                                         Career <br className="hidden lg:block" /> Service Cell
                                     </h1>
-                                    <p className="max-w-2xl text-sm font-medium tracking-wide text-slate-300 sm:text-lg">
+                                    <p className="max-w-2xl text-sm font-medium tracking-wide text-slate-300 sm:text-base md:text-lg">
                                         Indian Institute of Information Technology, Raichur
                                     </p>
                                 </div>
@@ -59,14 +58,14 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <section className="flex flex-col gap-8 section-shell relative z-10 py-16 sm:py-20" id="scrollTO">
+            <section className="flex flex-col gap-8 section-shell relative z-10 py-12 sm:py-16 md:py-20 lg:py-24" id="scrollTO">
                 <div id="aboutUs" className="scroll-mt-32">
                     <h2 className="section-title px-2">About Us</h2>
-                    <div className="flex flex-col lg:flex-row gap-8 mt-6 rounded-3xl border border-slate-200/80 bg-white/85 p-6 shadow-soft backdrop-blur-xl sm:p-8 items-center lg:items-start">
-                        <p className="w-full lg:w-2/3 text-sm leading-relaxed text-slate-700 sm:text-base">
+                    <div className="flex flex-col lg:flex-row gap-8 mt-6 rounded-3xl border border-slate-200/80 bg-white/85 p-6 shadow-soft backdrop-blur-xl sm:p-8 md:p-10 items-center lg:items-start">
+                        <p className="w-full lg:w-2/3 text-sm leading-relaxed text-slate-700 sm:text-base md:text-lg lg:text-base xl:text-lg">
                             {AboutIIITR}
                         </p>
-                        <div className="relative hidden lg:flex w-full lg:w-1/3 h-64 overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-100 shadow-soft">
+                        <div className="relative flex w-full lg:w-1/3 h-56 sm:h-72 lg:h-auto lg:min-h-[300px] overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-100 shadow-soft">
                             <Image
                                 src="/images/banner/iiitr.png"
                                 alt=""

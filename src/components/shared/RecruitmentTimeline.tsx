@@ -44,7 +44,7 @@ export default function RecruitmentTimeline() {
                                 <div className="flex-1 pr-6 flex justify-end">
                                     {!isRight && (
                                         <div className="w-full rounded-2xl border border-slate-200/80 bg-white/85 backdrop-blur-sm shadow-soft px-5 py-3.5 text-right">
-                                            <p className="text-xs leading-relaxed text-slate-600 sm:text-sm">{step}</p>
+                                            <p className="text-xs leading-relaxed text-slate-600 sm:text-sm md:text-base">{step}</p>
                                         </div>
                                     )}
                                 </div>
@@ -58,7 +58,7 @@ export default function RecruitmentTimeline() {
                                 <div className="flex-1 pl-6 flex justify-start">
                                     {isRight && (
                                         <div className="w-full rounded-2xl border border-slate-200/80 bg-white/85 backdrop-blur-sm shadow-soft px-5 py-3.5">
-                                            <p className="text-xs leading-relaxed text-slate-600 sm:text-sm">{step}</p>
+                                            <p className="text-xs leading-relaxed text-slate-600 sm:text-sm md:text-base">{step}</p>
                                         </div>
                                     )}
                                 </div>

@@ -6,11 +6,11 @@ export default function StarPage() {
         <div className="relative min-h-screen pb-20 pt-32">
             <div className="section-shell relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="mb-16 text-center sm:mb-24">
-                    <h1 className="font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+                <div className="mb-16 text-center sm:mb-20 md:mb-24">
+                    <h1 className="font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
                         Special <span className="text-cyan-600">Mentions</span>
                     </h1>
-                    <p className="mx-auto mt-4 max-w-2xl text-base text-slate-600 sm:text-lg">
+                    <p className="mx-auto mt-4 max-w-2xl text-base text-slate-600 sm:text-lg md:text-xl">
                         Celebrating the exceptional achievements of our students in securing top-tier placements and admissions into prestigious universities worldwide.
                     </p>
                 </div>

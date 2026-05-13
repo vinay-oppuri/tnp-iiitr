@@ -21,7 +21,7 @@ export default function TeamPage() {
             <section className="section-shell mt-12 sm:mt-20">
                 <SectionTitle title="Core Members" />
 
-                <div className="mt-8 flex flex-wrap justify-center gap-8">
+                <div className="mt-8 flex flex-wrap justify-center gap-6 md:gap-8">
                     {facultyIncharge.map((member, idx) => (
                         <div key={member.id} className="w-[280px]">
                             <TeamCard member={member} delay={idx * 100} />
@@ -45,7 +45,7 @@ export default function TeamPage() {
             <section className="section-shell mt-12 sm:mt-20">
                 <SectionTitle title="Volunteers" />
 
-                <div className="mt-8 flex flex-wrap justify-center gap-8">
+                <div className="mt-8 flex flex-wrap justify-center gap-6 md:gap-8">
                     {volunteers.map((member, idx) => (
                         <div key={member.id} className="w-[280px]">
                             <TeamCard member={member} delay={idx * 100} />
@@ -61,7 +61,7 @@ function SectionTitle({ title }: { title: string }) {
     return (
         <div className="flex items-center gap-4 py-8">
             <div className="h-px flex-1 bg-slate-200"></div>
-            <h2 className="font-display text-2xl font-bold text-slate-900 sm:text-3xl whitespace-nowrap">
+            <h2 className="font-display text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl whitespace-nowrap">
                 {title}
             </h2>
             <div className="h-px flex-1 bg-slate-200"></div>

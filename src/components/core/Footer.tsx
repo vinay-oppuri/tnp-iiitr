@@ -31,15 +31,15 @@ export default function Footer() {
                                 <p className="font-display text-sm font-semibold text-white">IIIT Raichur</p>
                             </div>
                         </div>
-                        <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-300">
+                        <p className="mt-3 text-xs sm:text-sm md:text-base leading-relaxed text-slate-300">
                             A focused interface for internship and placement support with streamlined communication for students and recruiters.
                         </p>
                     </div>
 
                     <div>
-                        <h3 className="font-display text-sm sm:text-base font-semibold text-white">Address</h3>
-                        <p className="mt-3 text-xs sm:text-sm text-slate-300">Temporary Campus</p>
-                        <p className="mt-1 text-xs sm:text-sm leading-relaxed text-slate-300">{address}</p>
+                        <h3 className="font-display text-sm sm:text-base md:text-lg font-semibold text-white">Address</h3>
+                        <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-300">Temporary Campus</p>
+                        <p className="mt-1 text-xs sm:text-sm md:text-base leading-relaxed text-slate-300">{address}</p>
                         <div className="mt-4 overflow-hidden rounded-xl border border-slate-700">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3830.4501724340257!2d77.36376861384535!3d16.248682338922013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc9d17abbd87b87%3A0x28afde55f519a10b!2sIndian%20Institute%20of%20Information%20Technology%2C%20Raichur!5e0!3m2!1sen!2sin!4v1626109545024!5m2!1sen!2sin"
@@ -54,8 +54,8 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <h3 className="font-display text-sm sm:text-base font-semibold text-white">Quick Links</h3>
-                        <ul className="mt-3 space-y-2 text-xs sm:text-sm">
+                        <h3 className="font-display text-sm sm:text-base md:text-lg font-semibold text-white">Quick Links</h3>
+                        <ul className="mt-3 space-y-2 text-xs sm:text-sm md:text-base">
                             {links.map((link) => (
                                 <li key={link.id}>
                                     <a href={link.link} className="text-slate-300 transition hover:text-cyan-300 hover:underline">
@@ -67,11 +67,11 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <h3 className="font-display text-sm sm:text-base font-semibold text-white">Contact Us</h3>
-                        <div className="mt-3 space-y-3 text-xs sm:text-sm">
+                        <h3 className="font-display text-sm sm:text-base md:text-lg font-semibold text-white">Contact Us</h3>
+                        <div className="mt-3 space-y-3 text-xs sm:text-sm md:text-base">
                             {contacts.map((item) => (
                                 <div key={item.id}>
-                                    <p className="font-medium text-xs sm:text-sm text-slate-100">{item.name}</p>
+                                    <p className="font-medium text-xs sm:text-sm md:text-base text-slate-100">{item.name}</p>
                                     <a href={`mailto:${item.email}`} className="mt-1 block text-slate-300 transition hover:text-cyan-300">
                                         {item.email}
                                     </a>
@@ -86,7 +86,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="mt-8 flex flex-col gap-1.5 border-t border-slate-800 pt-5 text-[10px] sm:text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+                <div className="mt-8 flex flex-col gap-1.5 border-t border-slate-800 pt-5 text-[10px] sm:text-xs md:text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
                     <p>© {new Date().getFullYear()} Indian Institute of Information Technology, Raichur</p>
                     <a href="https://www.iiitr.ac.in/" target="_blank" rel="noreferrer" className="transition hover:text-cyan-300">
                         Visit IIIT Raichur

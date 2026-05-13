@@ -119,7 +119,7 @@ export default function Navbar() {
                         variant="outline"
                         size="icon"
                         className={cn(
-                            "md:hidden transition",
+                            "lg:hidden transition",
                             isTransparent
                                 ? "text-white border-white/20 bg-transparent hover:bg-white/10 hover:text-white"
                                 : "text-slate-300 border-slate-700 bg-transparent hover:bg-slate-800 hover:text-white"
@@ -132,7 +132,7 @@ export default function Navbar() {
                         {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
                     </Button>
 
-                    <div className="hidden items-center gap-1 md:flex">
+                    <div className="hidden items-center gap-1 lg:flex">
                         {sectionLinks.map((item) => (
                             <Button
                                 key={item.target}
@@ -211,7 +211,7 @@ export default function Navbar() {
                 <div
                     id="mobile-menu"
                     className={cn(
-                        "mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/80 shadow-[0_12px_30px_rgba(0,0,0,0.2)] backdrop-blur-xl transition-all duration-300 md:hidden",
+                        "mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/80 shadow-[0_12px_30px_rgba(0,0,0,0.2)] backdrop-blur-xl transition-all duration-300 lg:hidden",
                         isOpen ? "max-h-[720px] opacity-100" : "max-h-0 opacity-0 border-transparent"
                     )}
                 >

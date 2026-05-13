@@ -68,7 +68,7 @@ const PlacementStats: React.FC = () => {
         {/* Card 1 */}
         <Card className="flex flex-col shrink-0 w-[85vw] sm:w-[450px] lg:w-full snap-center border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden bg-white">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm sm:text-base font-semibold text-gray-800 font-montserrat flex gap-1 flex-wrap">
+            <CardTitle className="text-sm sm:text-base md:text-lg font-semibold text-gray-800 font-montserrat flex gap-1 flex-wrap">
               Highest package per batch (LPA)
             </CardTitle>
           </CardHeader>
@@ -125,7 +125,7 @@ const PlacementStats: React.FC = () => {
         {/* Card 2 */}
         <Card className="flex flex-col shrink-0 w-[85vw] sm:w-[450px] lg:w-full snap-center border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden bg-white">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm sm:text-base font-semibold text-gray-800 font-montserrat flex gap-1 flex-wrap">
+            <CardTitle className="text-sm sm:text-base md:text-lg font-semibold text-gray-800 font-montserrat flex gap-1 flex-wrap">
               Placement Rate (%) <span className="font-normal text-gray-500">— Batch overview</span>
             </CardTitle>
           </CardHeader>
@@ -164,7 +164,7 @@ const PlacementStats: React.FC = () => {
         {/* Card 3 */}
         <Card className="flex flex-col shrink-0 w-[85vw] sm:w-[450px] lg:w-full snap-center border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden bg-white">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm sm:text-base font-semibold text-gray-800 font-montserrat flex gap-1 flex-wrap">
+            <CardTitle className="text-sm sm:text-base md:text-lg font-semibold text-gray-800 font-montserrat flex gap-1 flex-wrap">
               Companies visiting campus <span className="font-normal text-gray-500">— growing recruiter interest</span>
             </CardTitle>
           </CardHeader>

@@ -24,17 +24,17 @@ export default function ReusableCard({
     const paragraphs = String(content).split("\n\n");
 
     return (
-        <article className={`flex flex-col gap-8 rounded-3xl border border-slate-200/60 bg-white p-8 shadow-sm transition-all hover:shadow-md sm:p-10 lg:flex-row ${!isLeftAlign ? "lg:flex-row-reverse" : ""}`}>
+        <article className={`flex flex-col gap-8 rounded-3xl border border-slate-200/60 bg-white p-8 shadow-sm transition-all hover:shadow-md sm:p-10 md:p-12 md:flex-row ${!isLeftAlign ? "md:flex-row-reverse" : ""}`}>
 
             {/* Minimal Logo/Image Column */}
             {haveLogo && (
-                <div className="flex w-full shrink-0 lg:w-1/3">
-                    <div className="relative w-full min-h-[250px] sm:min-h-[300px] overflow-hidden rounded-2xl bg-slate-50 ring-1 ring-slate-100 lg:h-full lg:min-h-[400px]">
+                <div className="flex w-full shrink-0 md:w-1/3">
+                    <div className="relative w-full min-h-[250px] sm:min-h-[300px] overflow-hidden rounded-2xl bg-slate-50 ring-1 ring-slate-100 md:h-full md:min-h-[300px] lg:min-h-[400px]">
                         <Image
-                            className="object-cover object-top transition-transform duration-500 hover:scale-105"
+                            className="object-cover object-center transition-transform duration-500 hover:scale-105"
                             src={imgSrc || ""}
                             fill
-                            sizes="(max-width: 1024px) 100vw, 33vw"
+                            sizes="(max-width: 768px) 100vw, 33vw"
                             alt={altText || writer || "profile"}
                         />
                     </div>
@@ -42,14 +42,14 @@ export default function ReusableCard({
             )}
 
             {/* Content Column */}
-            <div className={`flex flex-col ${haveLogo ? "lg:w-2/3" : "w-full"} ${!isLeftAlign && !haveLogo ? "lg:items-end lg:text-right items-start text-left" : "items-start text-left"}`}>
+            <div className={`flex flex-col ${haveLogo ? "md:w-2/3" : "w-full"} ${!isLeftAlign && !haveLogo ? "md:items-end md:text-right items-start text-left" : "items-start text-left"}`}>
                 <div className="mb-6">
-                    <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-slate-800">{heading}</h3>
-                    <div className={`mt-4 h-1 w-20 rounded bg-indigo-600 ${!isLeftAlign && !haveLogo ? "lg:ml-auto" : ""}`} />
+                    <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-800">{heading}</h3>
+                    <div className={`mt-4 h-1 w-20 rounded bg-indigo-600 ${!isLeftAlign && !haveLogo ? "md:ml-auto" : ""}`} />
                 </div>
 
                 <ScrollArea className={`w-full rounded-md ${writer ? "h-60 pr-4" : ""}`}>
-                    <div className="space-y-4 text-sm leading-relaxed text-slate-600 sm:text-base">
+                    <div className="space-y-4 text-sm leading-relaxed text-slate-600 sm:text-base md:text-lg">
                         {paragraphs.map((item, index) => (
                             <p key={index} dangerouslySetInnerHTML={{ __html: item }} />
                         ))}
@@ -57,7 +57,7 @@ export default function ReusableCard({
                 </ScrollArea>
 
                 {writer && (
-                    <div className={`mt-8 w-full ${!isLeftAlign && !haveLogo ? "lg:text-right text-left" : "text-left"}`}>
+                    <div className={`mt-8 w-full ${!isLeftAlign && !haveLogo ? "md:text-right text-left" : "text-left"}`}>
                         <p className="font-display text-lg font-semibold text-slate-900">— {writer}</p>
                     </div>
                 )}

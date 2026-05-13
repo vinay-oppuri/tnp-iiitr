@@ -15,7 +15,7 @@ export default function TeamCard({ member, delay = 0, hideEmail = false }: TeamC
         <Card
             className="group relative flex h-full w-full flex-1 flex-col items-center overflow-hidden rounded-3xl transition-all duration-300 hover:-translate-y-2 hover:shadow-hover"
         >
-            <div className="relative h-64 w-full overflow-hidden bg-slate-100 sm:h-72">
+            <div className="relative h-64 w-full overflow-hidden bg-slate-100 sm:h-72 md:h-80">
                 <Image
                     src={member.image}
                     alt={member.name}
@@ -51,8 +51,8 @@ export default function TeamCard({ member, delay = 0, hideEmail = false }: TeamC
             </div>
 
             <CardContent className="flex w-full flex-grow flex-col justify-center space-y-1 p-6 text-center">
-                <CardTitle className="font-display text-xl font-bold text-slate-900">{member.name}</CardTitle>
-                <CardDescription className="text-sm font-medium text-cyan-600 uppercase tracking-wider">{member.role}</CardDescription>
+                <CardTitle className="font-display text-xl md:text-2xl font-bold text-slate-900">{member.name}</CardTitle>
+                <CardDescription className="text-sm md:text-base font-medium text-cyan-600 uppercase tracking-wider">{member.role}</CardDescription>
             </CardContent>
         </Card>
     );

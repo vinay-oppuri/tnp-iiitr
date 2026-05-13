@@ -7,7 +7,7 @@ export default function WhatWeOfferPage() {
     return (
         <main className="mainBody pt-24 sm:pt-28 pb-20">
             <div className="section-shell">
-                <div id="whatWeOffer" className="space-y-16 sm:space-y-24">
+                <div id="whatWeOffer" className="space-y-16 sm:space-y-20 md:space-y-24">
                     <div className="space-y-4 text-center">
                         <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">Discover</p>
                         <h1 className="section-title">What We Offer</h1>
@@ -29,8 +29,8 @@ export default function WhatWeOfferPage() {
                             {AcademicsData.map((item, id) => (
                                 <div key={id} className="space-y-8">
                                     <div className="space-y-4 text-center">
-                                        <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">{item.title}</h2>
-                                        <p className="mx-auto max-w-5xl text-sm leading-relaxed text-slate-600 sm:text-base md:text-justify lg:text-center">
+                                        <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl">{item.title}</h2>
+                                        <p className="mx-auto max-w-5xl text-sm leading-relaxed text-slate-600 sm:text-base md:text-lg md:text-justify lg:text-center">
                                             {item.facilities}
                                         </p>
                                     </div>
@@ -42,7 +42,7 @@ export default function WhatWeOfferPage() {
                                             <div className="h-px w-full max-w-[100px] bg-slate-200 sm:max-w-[200px]" />
                                         </div>
 
-                                        <div className={`grid gap-4 ${item.courses.length === 1 ? "grid-cols-1" :
+                                        <div className={`grid gap-4 md:gap-6 ${item.courses.length === 1 ? "grid-cols-1" :
                                             item.courses.length === 2 ? "grid-cols-1 sm:grid-cols-2" :
                                                 item.courses.length === 3 ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" :
                                                     "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
@@ -67,8 +67,8 @@ export default function WhatWeOfferPage() {
                             {ResearchData.map((item, id) => (
                                 <div key={id} className="space-y-8">
                                     <div className="space-y-4 text-center">
-                                        <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">{item.title}</h2>
-                                        <p className="mx-auto max-w-5xl text-sm leading-relaxed text-slate-600 sm:text-base md:text-justify lg:text-center">
+                                        <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl">{item.title}</h2>
+                                        <p className="mx-auto max-w-5xl text-sm leading-relaxed text-slate-600 sm:text-base md:text-lg md:text-justify lg:text-center">
                                             {item.facilities}
                                         </p>
                                     </div>
@@ -80,7 +80,7 @@ export default function WhatWeOfferPage() {
                                             <div className="h-px w-full max-w-[100px] bg-slate-200 sm:max-w-[200px]" />
                                         </div>
 
-                                        <div className={`grid gap-4 ${item.courses.slice(0, 8).length === 1 ? "grid-cols-1" :
+                                        <div className={`grid gap-4 md:gap-6 ${item.courses.slice(0, 8).length === 1 ? "grid-cols-1" :
                                             item.courses.slice(0, 8).length === 2 ? "grid-cols-1 sm:grid-cols-2" :
                                                 item.courses.slice(0, 8).length === 3 ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" :
                                                     "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
