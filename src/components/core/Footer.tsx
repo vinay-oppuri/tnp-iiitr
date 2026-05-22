@@ -1,5 +1,6 @@
 import { address, Contacts, FooterLinks } from "@/data/FooterInfo";
 import Image from "next/image";
+import Link from "next/link";
 
 
 type FooterContact = {
@@ -58,9 +59,9 @@ export default function Footer() {
                         <ul className="mt-3 space-y-2 text-xs sm:text-sm md:text-base">
                             {links.map((link) => (
                                 <li key={link.id}>
-                                    <a href={link.link} className="text-slate-300 transition hover:text-cyan-300 hover:underline">
+                                    <Link href={link.link} className="text-slate-300 transition hover:text-cyan-300 hover:underline">
                                         {link.name}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
