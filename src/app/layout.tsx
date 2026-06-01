@@ -14,6 +14,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
     title: "CSC | IIIT Raichur",
     description: "Official Career Service Cell of Indian Institute of Information Technology Raichur.",
+    metadataBase: new URL("https://csc.iiitr.ac.in"),
 };
 
 export default function Layout({

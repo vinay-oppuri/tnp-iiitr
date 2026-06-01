@@ -173,12 +173,12 @@ export default function Navbar() {
                                 align="end"
                             >
                                 <DropdownMenuItem className="cursor-pointer rounded-lg p-0 focus:bg-slate-800 focus:text-white" asChild>
-                                    <Link href="/files/INTERNSHIP_RULES.pdf" target="_blank" rel="noopener noreferrer" className="w-full px-3 py-2 text-sm text-slate-300 hover:text-white">
+                                    <Link href="/files/INTERNSHIP_BROCHURE.pdf" target="_blank" rel="noopener noreferrer" className="w-full px-3 py-2 text-sm text-slate-300 hover:text-white">
                                         Internship Rules
                                     </Link>
                                 </DropdownMenuItem>
                                 <DropdownMenuItem className="cursor-pointer rounded-lg p-0 focus:bg-slate-800 focus:text-white" asChild>
-                                    <Link href="/files/PLACEMENT_RULES.pdf" target="_blank" rel="noopener noreferrer" className="w-full px-3 py-2 text-sm text-slate-300 hover:text-white">
+                                    <Link href="/files/PLACEMENT_BROCHURE.pdf" target="_blank" rel="noopener noreferrer" className="w-full px-3 py-2 text-sm text-slate-300 hover:text-white">
                                         Placement Rules
                                     </Link>
                                 </DropdownMenuItem>

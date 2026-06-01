@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "csc.iiitr.ac.in",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -16,23 +16,23 @@
     "@radix-ui/react-tabs": "^1.1.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "lucide-react": "^1.11.0",
-    "next": "^16.2.4",
+    "lucide-react": "^1.17.0",
+    "next": "^16.2.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.6.0",
     "recharts": "2.15.4",
-    "tailwind-merge": "^3.5.0",
+    "tailwind-merge": "^3.6.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@types/node": "^20.19.39",
-    "@types/react": "^18.3.28",
+    "@types/node": "^20.19.41",
+    "@types/react": "^18.3.29",
     "@types/react-dom": "^18.3.7",
     "autoprefixer": "^10.5.0",
     "eslint": "^8.57.1",
-    "eslint-config-next": "^16.2.4",
-    "postcss": "^8.5.12",
+    "eslint-config-next": "^16.2.6",
+    "postcss": "^8.5.15",
     "tailwindcss": "^3.4.19",
     "typescript": "^5.9.3"
   }
