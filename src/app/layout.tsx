@@ -15,6 +15,10 @@ export const metadata: Metadata = {
     title: "CSC | IIIT Raichur",
     description: "Official Career Service Cell of Indian Institute of Information Technology Raichur.",
     metadataBase: new URL("https://csc.iiitr.ac.in"),
+    icons: {
+        icon: "/logos/iiitr-white.png",
+        apple: "/logos/iiitr-white.png",
+    },
 };
 
 export default function Layout({
